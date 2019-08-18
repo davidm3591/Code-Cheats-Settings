@@ -1,0 +1,263 @@
+# use a global variable 's' locally in function f_1()
+def f_1():
+    print(s)
+
+s = "I love Paris in the summertime!" # define global 's' and assign value
+f_1() # function call. python finds global 's' to perform print
+------------------------------------------------------------------
+
+def f_1():
+    print(s) # this breaks because there is a local and global version and python knows the local takes precedence
+    s = "I love London!" # define local
+    print(s)
+
+s = "I love Paris in the summertime!" # define global 's' and assign value
+f_1() # function call. python can't execute because the local version can't be used with the global version
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in f_1
+UnboundLocalError: local variable 's' referenced before assignment
+
+-------------------------------------------------------------------------------
+Example 1:
+-------------------------------------------------------------------------------
+c = None
+u = None
+l = None
+
+def f_1():
+    global c
+    global u
+    global l
+    course = "1111"
+    unit = '22'
+    lesson = '33'
+    c = course
+    u = unit
+    l = lesson
+    print(f"Printing c, u, and l: {c, u, l}")
+    print(f"Printing course, unit, and lesson: {course, unit, lesson}")
+
+def f_2():
+    global c
+    global u
+    global l
+    print(f"Printing c, u, and l: {c, u, l}")
+
+f_1() # have to call f_1() for globals to update or global values for f_2() are still None
+
+f_2()
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Example 2:
+-------------------------------------------------------------------------------
+def f_1():
+    global c
+    global u
+    global l
+    course = "1111"
+    unit = '22'
+    lesson = '33'
+    c = course
+    u = unit
+    l = lesson
+
+# placing globals after f_1() loads, but before f_2() is called does not update them for f_1()
+# f_1() must run before f_2() for globals to be updated in f_2()
+c = None
+u = None
+l = None
+
+def f_2():
+    global c
+    global u
+    global l
+    print(f"Printing c, u, and l: {c, u, l}")
+
+f_2()
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Example 3:
+-------------------------------------------------------------------------------
+# f_1() must run before f_2() for globals to be updated in f_2()
+c = None
+u = None
+l = None
+
+def f_1():
+    global c
+    global u
+    global l
+    course = 1
+    unit = 2
+    lesson = 3
+    c = course
+    u = unit
+    l = lesson
+
+def f_2():
+    global c
+    global u
+    global l
+    print(f"Printing c, u, and l: {c, u, l}")
+
+f_1()
+f_2()
+
+
+-------------------------------------------------------------------------------
+Example 4:
+-------------------------------------------------------------------------------
+# f_1() must run before f_2() for globals to be updated in f_2()
+c = None
+u = None
+l = None
+
+def f_1():
+    global c
+    global u
+    global l
+    course = "1111"
+    unit = '22'
+    lesson = '33'
+    c = course
+    u = unit
+    l = lesson
+
+def f_2():
+    f_1() # call f_1() before using globals
+    global c
+    global u
+    global l
+    print(f"Printing c, u, and l: {c, u, l}")
+
+f_2()
+
+
+
+
+c = None
+u = None
+l = None
+
+def f_1():
+    course = 1
+    unit = 2
+    lesson = 3
+    c = course
+    u = unit
+    l = lesson
+
+def f_2():
+    global c
+    global u
+    global l
+    print(f"\nPrinting c, u, and l: {c, u, l}\n")
+
+# f_1() must run before f_2() for globals to be updated in f_2()
+print("\nCalling f_1() before f_2() function call\n")
+f_1()
+print("\nCalling f_2() after f_1\n")
+f_2()
+
+
+
+
+
+c = None
+u = None
+l = None
+
+def f_1():
+    course = 1
+    unit = 2
+    lesson = 3
+    c = course
+    u = unit
+    l = lesson
+
+def f_2():
+    global c
+    global u
+    global l
+    print(f"\nPrinting c, u, and l: {c, u, l}\n")
+
+# f_1() must run before f_2() for globals to be updated in f_2()
+print("\nCalling f_1() before f_2() function call\n")
+f_1()
+print("\nCalling f_2() after f_1\n")
+f_2()
+
+
+
+
+# Create globals and assign course, unit, and lesson values
+#  for use outside of get_file(). (Weird names to reduce the
+#  the risk overwrite issues with globals>)
+
+
+
+
+
+
+{'a': 1, 'c': 3, 'b': 2}
+
+from pprint import pprint
+d = {'a':1, 'b':2, 'c':3}
+print(d)
+d = {'c':3, 'b':2, 'a':1}
+
+>>> from pprint import pprint
+>>> pprint(d)
+{'a': 1, 'b': 2, 'c': 3}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> d = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5}
+
+It's not sorted, as we see below, 'c' will come before 'b'. It also has no order, if we add new things it appears what seems like random order:
+
+>>> d['g'] = 6
+>>> d['i'] = 8
+>>> d
+{'a': 0, 'c': 2, 'b': 1, 'e': 4, 'd': 3, 'g': 6, 'f': 5, 'i': 8}
+
+OK, so let's use an OrderedDict then:
+
+>>> o = OrderedDict(sorted({'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5}.items()))
+>>> o
+OrderedDict([('a', 0), ('b', 1), ('c', 2), ('d', 3), ('e', 4), ('f', 5)])
+
+Aha! Sorted! So OrderedDict works!? No.
+
+>>> o['i'] = 8
+>>> o['g'] = 6
+>>> o
+OrderedDict([('a', 0), ('b', 1), ('c', 2), ('d', 3), ('e', 4), ('f', 5), ('i', 8), ('g', 6)])
+
+
+
+
+
+
+
+
+
+
+
