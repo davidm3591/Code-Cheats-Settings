@@ -18,20 +18,28 @@
 # ###           1.6.1. Character classes                             ###
 # ###           1.6.2. Anchors                                       ###
 # ###           1.6.3. Quantifiers                                   ###
+# ###       1.7. Examples (patterns: metacharcters, anchors,         ###
+# ###            boundaries)                                         ###
+# ###           1.7.1 Phone numbers                                  ###
+# ###               - No quatifiers                                  ###
+# ###               - Quantifiers                                    ###
 # ###                                                                ###
 # ###     2. Emails (emails.py)                                      ###
-# ###                                                                ###
-# ###                                                                ###
 # ###                                                                ###
 # ###     3. URLs (urls.py)                                          ###
 # ###                                                                ###                                                                ###
 # ###                                                                ###
+# ################################################################## ###
 
 import re
 
 
 def ln_brk():
     print('\n')
+
+
+sep_marker = "\n"
+sep_marker += 5 * "-------------"
 # ###########################   1. Simple   ############################
 
 
@@ -46,6 +54,7 @@ coreyms.com
 321-555-4321
 123.555.1234
 123*555*1234
+456_555_1234
 800-555-1234
 900-555-1234
 Mr. Schafer
@@ -201,5 +210,81 @@ matches11 = pattern11.finditer(sentence)
 
 for match11 in matches11:
     print(match11)
+# ----------------------------------------------------------------------
+
+
+# 1.7 Examples patterns: metacharcters, anchors, boundaries
+# ----------------------------------------------------------------------
+
+# 1.7.1 Phone numbers #
+# Phone numbers with \d and no quantifier
+ln_brk()
+print(f"Phone numbers with \d and no quantifier{sep_marker}")
+# 3 digits, any character, 3 digits, any character, 4 digits
+pattern12 = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')
+matches12 = pattern12.finditer(text_to_search)
+
+for match12 in matches12:
+    print(match12)
+
+# Phone numbers with \d and no quantifier from external text file
+ln_brk()
+print(f"Phone numbers with \d and no quantifier "
+      f"from external text file{sep_marker}")
+
+with open('data.txt', 'r') as f:
+    contents = f.read()
+
+    pattern13 = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')
+    matches13 = pattern13.finditer(contents)
+
+    for match13 in matches13:
+        print(match13)
+
+# Phone numbers with \d, no quantifier, '-' or '.' separator
+# with charcter set []
+ln_brk()
+print(f"Phone numbers with \d, no quantifier, \n'-' or '.' "
+      f"separator withcharcter set [-.]{sep_marker}")
+pattern14 = re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d\d')
+matches14 = pattern14.finditer(text_to_search)
+
+for match14 in matches14:
+    print(match14)
+
+# 800 or 900 phone numbers with [89], no quantifier, '-' or '.' separator
+# with []
+ln_brk()
+print(f"800 or 900 phone numbers with [89], no \nquantifier, '-' or '.' "
+      f"separator [-.]{sep_marker}")
+pattern15 = re.compile(r'[89]00[-.]\d\d\d[-.]\d\d\d\d')
+matches15 = pattern15.finditer(text_to_search)
+
+for match15 in matches15:
+    print(match15)
+
+# 800 or 900 phone numbers with [89], no quantifier, '-' or '.' separator
+# with [] from external text file
+ln_brk()
+print(f"800 or 900 phone numbers with [89], no \nquantifier, '-' or '.' "
+      f"separator [-.] from external text file{sep_marker}")
+pattern16 = re.compile(r'[89]00[-.]\d\d\d[-.]\d\d\d\d')
+
+with open('data.txt', 'r') as f:
+    contents1 = f.read()
+    matches16 = pattern16.finditer(contents1)
+
+    for match16 in matches16:
+        print(match16)
+
+# Phone numbers with \d and exact number quantifier { }
+ln_brk()
+print("Phone numbers with \d and exact number quantifier { }" + sep_marker)
+# 3 digits, any character, 3 digits, any character, 4 digits
+pattern17 = re.compile(r'\d{3}.\d{3}.\d{4}')
+matches17 = pattern17.finditer(text_to_search)
+
+for match17 in matches17:
+    print(match17)
 # ----------------------------------------------------------------------
 # Stopped at 14:00
