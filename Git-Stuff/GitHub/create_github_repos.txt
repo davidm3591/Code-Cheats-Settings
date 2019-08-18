@@ -1,0 +1,181 @@
+CREATING A GITHUB REPOSITORY FROM EXISTING GIT LOCAL REPOS
+------------------------------------------------------------------------
+EXISTING LOCAL REPOSITORY (This also uses HTTPS authentication)
+1. Create new repository on GitHub
+2. git remote add origin https://github.com/davidm3591/demo.git
+   FOR SSH:
+   git remote add origin git@github.com:davidm3591/demo.git
+    EXPLAINED
+    - git remote (specifying a remote)
+    - add (add sub-command takes two parameters: 
+        1. origin (The name of the remote reference we want to create)
+        2. the full url to the remote repository
+3. git push -u origin master --tags
+    EXPLAINED
+    - git push (push changes to remote)
+    - -u (establish a relationship between the local master and the 
+        remote master branches)(-u is only used for the first time
+        creating the remote repository from the local repository)
+    - origin (name of the remote repository used to push up changes)
+    - master (the name of the branch to push up)
+    - --tags (flag to send all of the tags to push up to github)
+4. Enter username and password (for HTTPS)
+
+SETTING UP SSH KEY (if there is not already an ssh key)
+1. ls .ssh (Check that there is not already an ssh key:)
+    - if no key exist, should return:
+        ls: cannot access '.ssh': No such file or directory
+        (make sure to check directory where git is installed (C/Program Files)
+            and also (C/Users/david))
+2. mkdir .ssh (create the directory for the ssh key)
+3. cd .ssh (cd into .ssh)
+4. ssh-keygen -t rsa -C "davidmltz@gmail.com"
+    - ssh-keygen (create an ssh key)
+    - -t (-t = type)
+    - rsa (rsa is the key type)
+    - -C (common name)
+    - email address
+
+IF THERE IS ALREADY A KEY (and there is on the laptop)
+1. Copy the ssh key to the clipboard
+    $ clip < ~/.ssh/id_rsa.pub
+2. Paste in New SSH Key on GitHub
+3. In terminal change the url (from https to ssh) that origin points to 
+    git remote set-url origin git@github.com:davidm3591/demo.git
+4. Verify the change
+    $ git remote -v
+    Returns:
+    origin  git@github.com:davidm3591/demo.git (fetch)
+    origin  git@github.com:davidm3591/demo.git (push)
+5. Change local repo to use the new SSH key (key is in a different directroy)
+    $ ssh -T git@github.com
+    Returns:
+    The authenticity of host 'github.com (192.30.255.113)' can't be established.
+    RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+    Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+    Please type 'yes', 'no' or the fingerprint: yes
+    Warning: Permanently added 'github.com,192.30.255.113' (RSA) to the list of known hosts.
+    Hi davidm3591! You've successfully authenticated, but GitHub does not provide shell access.
+------------------------------------------------------------------------
+
+
+
+
+CREATING A GITHUB REPOSITORY FROM EXISTING GIT LOCAL REPOS
+
+ESTABLISH/ASSOCIATE LOCAL REPOS --> REMOTE REPOS - CONNECT
+$ git remote add origin https://github.com/davidM195/demo.git
+
+VERIFY LOCATION OF ORIGIN
+$ git remote -v
+Returns:
+origin  https://github.com/davidM195/demo.git (fetch)
+origin  https://github.com/davidM195/demo.git (push)
+
+SYNCHRONIZE REMOTE REPOS WITH LOCAL REPOS CHANGES
+$ git push -u origin master --tags
+EXPLAINED (DETAILED):
+-u: Set up a tracking branch relationship between the
+    master branch on the local repos and the master
+    branch on the remote repos (-u is only required for
+    the first time setup)
+origin: the name of the remote repos that is used
+    to push up changes
+master: The name of the branch we are pushing up
+--tags: Command to send all of the tags in the local
+    up to the remote
+
+EXPLAINED (COMMON ENGLISH)
+$ git push -u origin master --tags
+push (push) up (-u) to origin (origin) the master branch (master) with all associated tags (--tags) from the local repos
+
+Should be asked for username and password
+$ git push -u origin master --tags
+Returns Popup asking for username and password (https authentication)
+
+UN: DavidM3591
+PW: myRedhead12B!
+
+If successful, returns:
+Enumerating objects: 40, done.
+Counting objects: 100% (40/40), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (33/33), done.
+Writing objects: 100% (40/40), 3.77 KiB | 428.00 KiB/s, done.
+Total 40 (delta 9), reused 0 (delta 0)
+remote: Resolving deltas: 100% (9/9), done.
+To https://github.com/davidM195/demo.git
+ * [new branch]      master -> master
+ * [new tag]         v1.0.0 -> v1.0.0
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+
+SETTING UP SSH (SECURE SHELL)
+QUERY GIT (whether there is an ssh key)
+$ ls .ssh
+If no key, returns:
+ls: cannot access '.ssh': No such file or directory
+
+Make a directory for ssh
+$ mkdir .ssh
+
+Change to that directory
+$ cd .ssh
+
+Check working directory
+$ pwd
+/d/projects/demo/.ssh
+
+Generate ssh key
+ssh-keygen -t rsa -C "davidmltz@gmail.com"
+    (ssh-keygen = generate an ssh key)
+    (-t = type)
+    (-C = common name)
+    (enter email address of account)
+Returns:
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/david/.ssh/id_rsa):
+/c/Users/david/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/david/.ssh/id_rsa.
+Your public key has been saved in /c/Users/david/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:YlEmU1ilr82KEf8G4txZfq880SuDJ6Ttx8Fz3BVgyNU davidmltz@gmail.com
+The key's randomart image is:
++---[RSA 3072]----+
+|      o+=.o o+o  |
+|      .= . o.  E |
+|      . .       .|
+|       . .      .|
+|      + S .. o ..|
+|     ..+.+o = + .|
+|     o.ooOoo = . |
+|      oo+o*.O .  |
+|      . .oo=o*.  |
++----[SHA256]-----+
+
+Type:
+$ ls -al
+Returns:
+total 4
+drwxr-xr-x 1 david 197609 0 Jun 29 11:04 ./
+drwxr-xr-x 1 david 197609 0 Jun 29 11:04 ../
+
+Open (if the return does not include id_rsa and id_rsa.pub)
+
+
+
+david@LAPTOP-H8POUJJR MINGW64 /d/projects/demo/.ssh (master)
+$ eval $(ssh-agent -s)
+Agent pid 2283
+
+
+ssh-add ~/.ssh/id_rsa
+
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+
+$ ssh-keygen -t rsa -b 4096 -C "davidmltz@gmailcom"
+
+

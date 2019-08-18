@@ -1,0 +1,339 @@
+﻿GIT CHEAT SHEET, GITBASH
+-------------------------------------------------------------------
+VIEW DIRECTORY CONTENT
+    $ ls
+
+VIEW HIDDEN FILES
+    $ ls -a
+
+CREATE FILE
+    $ touch file.name
+
+DELETE FILE
+    $ rm file.name
+
+CREATE DIRECTORY
+    $ mkdir directory_name
+
+DELETE DIRECTORY
+    $ rmdir directory_name
+
+DELETE A DIRECTORY WITH CONTENT
+$ rm <directory_name> -rf
+
+
+RENAME FILE WITH GIT COMMAND
+    $ git mv old_file.txt new_file.txt
+
+REMOVE FILE WITH GIT (git tracks deletion)
+    $ git rm demo.txt
+
+
+SHOW GIT VERSION
+     $ git --version
+        Returns:
+    	git version 2.10.2.windows.1
+    	(4/16/2018)
+
+LOCATION OF .gitconfig (VISTA and higher)
+C:\ProgramData\Git
+
+LIST ALL CONFIG VALUES
+    $ git config --list
+
+SET USER NAME
+    $ git config --global user.name "My Name"
+
+SET USER EMAIL
+    $ git config --global user.email "myName@somemail.com"
+
+GET HELP
+    $ git help <verb>
+    OR
+    $ git <verb> --help
+
+-------------------------------------------------------------------
+CREATE AN ALIAS FOR VIEWING HISTORY (FANCY GIT LOG)
+-------------------------------------------------------------------
+COMMAND THAT ALIAS IS CREATED FOR
+    $ git log --oneline --graph --decorate --all
+CREATE GIT ALIAS FOR HISTORY "hist"
+    $ git config --global alias.hist "log --oneline --graph --decorate --all"
+-------------------------------------------------------------------
+
+INITIALIZE A GIT REPOSITORY
+Creates directory demo for the repo and then creates repository
+    $ git init demo
+
+-------------------------------------------------------------------
+CLONE A REPO WITH HTTPS (Bitbucket)
+-------------------------------------------------------------------
+    git clone https://davidmltz@bitbucket.org/davidmltz/projects.git
+    bitbucket account
+    davidmltz@gmail.com
+    myRedhead1
+-------------------------------------------------------------------
+
+STASHING FILE EDITS INSTEAD OF ADD AND COMMIT
+GIT STASH
+    $ git stash
+
+VIEW STASH (WIP) LIST
+    $ git stash list
+
+REMOVE STASH, APPLY CHANGES
+    $ git stash pop
+
+LISTING FILE EDITS INSTEAD OF ADD AND COMMIT
+
+ADD ALL FILES TO STAGING
+    $ git add -A
+    OR
+    $ git add .
+
+ADD SPECIFIC FILES TO STAGING
+    $ git add filename.py
+
+REMOVE FILE(s) FROM STAGING
+    $ git reset filename.py
+
+REMOVE ALL FILES FROM STAGING
+    $ git reset HEAD
+
+UNTRACK A FILE
+    $ git rm --cached filename.py
+
+CHECK FILES THAT GIT IS TRACKING
+    $ git ls-files
+
+COMMIT A FILE (LOCAL REPOSITORY)
+    $ git commit -m
+    OR STAGE AND COMMIT IN ONE COMMAND
+    $ git commit -am
+
+
+GET LIST/LOG OF ALL COMMITS
+    $ git log (git log --oneline)
+    OR
+    $ git show (git log plus file changes)
+
+-----------------------------------------------------
+SHOW LOG & GIT GRAPH
+$ git log --oneline --graph
+* cd5ef4c (HEAD -> master, origin/master, origin/HEAD) More tweaks to README
+* 3aece48 Tweaked readme
+* 6c3693f (origin/example, example) remove lipsum.txt
+*   70edf22 Merge branch 'example' of github.com:davidm3591/my-website into example
+|\
+| * 4de4f2a Updating branches content and some text
+* |   13f1ba7 Merge pull request #3 from davidm3591/remove-impsum
+|\ \
+| * | f91c071 Removing ipsum file
+* | |   93010ab Merge pull request #2 from davidm3591/example
+|\ \ \
+| | |/
+| |/|
+| * | a6793f7 Update README.md
+* | |   ed147ae Merge branch 'master' of github.com:davidm3591/my-website
+|\ \ \
+| |_|/
+|/| |
+| * |   7378433 Merge pull request #1 from davidm3591/featrure-lipsum
+| |\ \
+| | |/
+| |/|
+| | * 36456a0 Create new file -- filler text
+-----------------------------------------------------
+
+GET LIST OF BRANCHES
+$ git branch
+RETURNS - asterisk indicates current branch you are on
+* master
+
+GET LIST OF ALL BRANCHES INCLUDING DEAD BRANCHES
+$ git branch -a
+
+CHECKOUT A BRANCH
+$ git checkout name_of_branch
+
+CREATE A NEW BRANCH
+$ git branch name_of_branch
+(make branch name as descriptive as possible)
+
+CREATE AND CHECKOUT A BRANCH IN ONE COMMAND
+$ git checkout -b name_of_branch
+
+CREATE A BRANCH OFF OF A BRANCH
+    Create MyFeature branch off develop.
+    $ git checkout -b myFeature develop
+
+    Do your work and then
+    $ git commit -am "Your message"
+
+    Now merge your changes to develop without a fast-forward
+    $ git checkout develop
+    $ git merge --no-ff myFeature
+
+    Now push changes to the server
+    $ git push origin develop
+    $ git push origin myFeature
+
+DELETE A BRANCH
+$ git branch -d name_of_branch
+
+REMOVE DEAD BRANCHES FROM LOCAL
+    $ git fetch -p
+    (dash p = prune)
+
+GETTING A REMOTE BRANCH ON LOCAL
+    $ git fetch
+THEN CHECKOUT BRANCH
+    $ git checkout name_of_remote_branch
+    (Note: if only one branch with that name, GitHub will setup local to track)
+
+TWO OPTIONS AFTER EDITING
+1. To discard changes after editing
+    $ git checkout filename.py
+2. Stage changes after editing
+    $ git add filename.py
+
+CHECK FILE DIFFERENCES
+ $ git diff filename.py
+
+
+MERGING BRANCHES (all merges are done when in the branch into which you want to merge content)
+ $ git merge branch-you-want-to-merge-into current-branch
+
+
+-------------------------------------------------------------------
+RELEASING A PRODUCTION VERSION - TAGGING - annotated
+-------------------------------------------------------------------
+
+
+CREATE TAG AT THE LAST COMMIT FOR THAT BRANCH
+    $ git tag -a v1.0.0  -m "Version 1.0.0 release."
+
+VIEW TAGS
+    $ git tag
+
+VIEW ANNOTATED TAG INFORMATION
+    $ git show v1.0.0
+    Example of return:
+    tag v1.0.0
+    Tagger: davidmltz <davidmltz@gmail.com>
+    Date:   Fri Jun 28 22:13:44 2019 -0700
+
+    Release 1.0.0
+
+    commit 78ffb486b328454daacc8083b70d7814aceb33b5 (HEAD -> master, tag: v1.0.0)
+    Author: davidmltz <davidmltz@gmail.com>
+    Date:   Fri Jun 28 22:09:46 2019 -0700
+
+CREATE TAG AT SPECIFIC PLACE (COMMIT)
+     $ git tag -a v0.3-beta -m "Release 0.3 (Beta)" 70edf22
+
+NOTE: BY DEFAULT TAGS ARE NOT INCLUDED IN A PUSH TO REMOTE REPO
+TO PUSH A TAG TO REMOTE REPO
+    $ git push origin name_of_tag
+
+TO PUSH ALL TAGS TO REMOTE REPO
+    $ git push --tags
+-------------------------------------------------------------------
+
+
+$ git pull
+Same as 
+$ git fetch
+then
+$ git merge
+
+
+
+
+
+When you're starting to work on an existing remote branch
+
+Let's say one of your colleagues has already started and published a branch on your remote server. You now want to chime in and start working on that topic, too. In that scenario, simply use the --track flag with the "git checkout" command:
+
+$ git checkout --track origin/dev
+Branch dev set up to track remote branch dev from origin.
+Switched to a new branch 'dev'
+
+This creates a new local branch with the same name as the remote one - and directly establishes a tracking connection between the two.
+When you're publishing a local branch
+
+Let's now look at the opposite scenario: you started a new local branch and now want to publish it on the remote for the first time:
+
+$ git push -u origin dev
+
+You can tell Git to track the newly created remote branch simply by using the -u flag with "git push".
+
+
+set (or change) a tracking relationship for your current HEAD branch at any time:
+When you decide at a later point in time
+$ git branch -u origin/dev
+
+-------------------------------------------------------------------
+GITIGNORE FILES
+-------------------------------------------------------------------
+GitIgnore file is a file that specifying the files or folders that we want to ignore. There are several ways to specifying those
+
+The first one is specifying by the specific filename. Here is an example, let’s say we want to ignore a file called readme.txt, then we just need to write readme.txt in the .gitignore file.
+
+The second one we can also write the name of the extension. For example, we are going to ignore all .txt files, then write *.txt.
+
+There is also a method to ignore a whole folder. Let’s say we want to ignore folder named test. Then we can just write test/ in the file.
+
+EXAMPLE FILE:
+.gitignore
+
+# Ignore file named 'README.txt'
+README.txt
+
+# Ignore folder named 'output'
+output/
+
+# Ignore all .java files
+*.java
+
+IGNORING FILES
+Create the file and open in editor
+$ touch .gitignore
+(for simplicity, VIM)
+$ vim .gitignore
+IN VIM
+(you can add files individually)
+my_app.log
+device.log
+-OR-
+(add any file with the extension .log)
+
+COMMENTS IN AN IGNORE FILE (.gitignore) are preceded with #
+# This is a comment in a .gitignore file
+
+    Updating ignore file to exclude merge (.orig) files
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..95ef7c6
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1 @@
++*.orig
+
+
+
+CREATE SSH KEY
+    $ ssh-keygen
+    hit enter to store in default location
+
+VIEW SSH KEY
+    $ ls ~/.ssh
+returns:
+    id_rsa  id_rsa.pub  known_hosts
+
+COPY SSH KEY TO CLIP BOARD
+    $ clip < ~/.ssh/id_rsa.pub
+
+
+

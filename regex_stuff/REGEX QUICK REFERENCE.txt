@@ -1,0 +1,112 @@
+REGEX QUICK REFERENCE
+
+CHARACTER CLASSES
+---------------------------------------------
+Use         To match character
+---------------------------------------------
+\w          Word character. [0-9_a-zA-Z] and Unicode word characters
+\W          Non-word character
+\d          Decimal digit and Unicode digits
+\D          Not a decimal digit
+\s          White-space character [\t\n\r\f\v] and Unicode spaces
+\S          Non-white-space char
+
+ANCHORS
+---------------------------------------------
+Use         To specify position
+---------------------------------------------
+\b          On word boundary
+\B          Not on word boundary
+^           At start of string or line (must be at beginning of line to match)
+$           At end of string or line ( must be at end of line to match)
+\A          At start of string
+\Z          At end of string
+
+
+QUANTIFIERS
+---------------------------------------------
+Greedy      Lazy Matches
+---------------------------------------------
+*           * 0 or more times
++           + 1 or more times
+?           ? 0 or 1 time
+{n}         {n} Exactly n times
+{n,}        {n,} At least n times
+{n,m}       {n,m} From n to m times
+
+
+SINGLE CHARACTERS
+---------------------------------------------
+Use         To match any character
+---------------------------------------------
+[set]       In that set
+[^set]      Not in that set
+[a–z]       In the a-z range
+[^a–z]      Not in the a-z range
+.           Any except \n (new line)
+|           - Either Or
+( )         - Group
+\char       Escaped special character
+
+
+REGULAR EXPRESSION OPERATIONS
+Module: re
+
+Pattern matching with Compiled objects 
+---------------------------------------------
+To initialize with  Use constructor
+---------------------------------------------
+Pattern             re.compile(pattern)
++ flags             re.compile(pattern,flags)
+
+
+Finding and replacing matched patterns. Use
+compiled object methods for additional
+options and fine-tuning parameters
+---------------------------------------------
+Use method      To
+---------------------------------------------
+re.match        Find match at start of string
+re.search       Find the first match
+re.findall      Retrieve all matching strings
+re.finditer     Retrive all matches
+re.sub          Replace a matching string
+re.split        Split text based on match
+
+
+Snippets Corey Schafer
+https://github.com/CoreyMSchafer/code_snippets/blob/master/Python-Regular-Expressions/snippets.txt
+
+MetaCharacters (Need to be escaped):
+. ^ $ * + ? { } [ ] \ | ( )
+
+.       - Any Character Except New Line
+\d      - Digit (0-9)
+\D      - Not a Digit (0-9)
+\w      - Word Character (a-z, A-Z, 0-9, _)
+\W      - Not a Word Character
+\s      - Whitespace (space, tab, newline)
+\S      - Not Whitespace (space, tab, newline)
+
+Anchor characters
+\b      - Word Boundary
+\B      - Not a Word Boundary
+^       - Beginning of a String
+$       - End of a String
+
+[]      - Matches Characters in brackets
+[^ ]    - Matches Characters NOT in brackets
+|       - Either Or
+( )     - Group
+
+Quantifiers:
+*       - 0 or More
++       - 1 or More
+?       - 0 or One
+{3}     - Exact Number
+{3,4}   - Range of Numbers (Minimum, Maximum)
+
+
+#### Sample Regexs ####
+
+[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
