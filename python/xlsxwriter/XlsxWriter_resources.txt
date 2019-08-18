@@ -1,0 +1,20 @@
+(Install)
+https://pypi.org/project/XlsxWriter/
+
+(PDF)
+https://xlsxwriter.readthedocs.io/getting_started.html
+
+(All the web stuff w/ tutorials 1, 2, 3)
+https://xlsxwriter.readthedocs.io/index.html
+
+https://www.youtube.com/watch?v=Cbt9JRbNBV0
+
+https://www.youtube.com/channel/UCvVZ19DRSLIC2-RUOeWx8ug
+
+https://www.youtube.com/watch?v=q6Mc_sAPZ2Y
+
+https://www.youtube.com/watch?v=D8-snVfekto
+
+https://www.youtube.com/watch?v=C-gEQdGVXbk
+
+https://www.youtube.com/watch?v=1jyOHCTgWpg

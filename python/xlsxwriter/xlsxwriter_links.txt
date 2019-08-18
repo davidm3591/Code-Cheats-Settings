@@ -1,0 +1,12 @@
+XlsxWriter Links:
+
+Format Class (formatting syntax and examples)
+https://xlsxwriter.readthedocs.io/format.html
+
+Worksheet Class (worksheet related formatting syntax and examples)
+https://xlsxwriter.readthedocs.io/page_setup.html
+
+XlsxWriter Contents (the big kahuna index)
+(tutorials, getting started, workbook, worksheet, format class, chart class)
+(Working with textboxes, cell comments, VBA macros)
+https://xlsxwriter.readthedocs.io/contents.html
