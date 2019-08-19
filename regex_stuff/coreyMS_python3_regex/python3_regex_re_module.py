@@ -27,8 +27,10 @@
 # ###               - Mr, Mr., Ms, Ms., Mrs, Mrs. and name                  ###
 # ###                 using group (Mr|Ms|Mrs)\.?                            ###
 # ###     2. Emails (emails.py)                                             ###
-# ###           2.1                                                         ###
+# ###           2.1. Email pattern build-up                                 ###
+# ###           2.2. Email pattern, Corey's cheat sheet                     ###                                                                ###
 # ###     3. URLs (urls.py)                                                 ###
+# ###                                                                       ###
 # ###                                                                       ###                                                                ###
 # ###                                                                       ###
 # ######################################################################### ###
@@ -346,7 +348,7 @@ david-53-milatz@some-place.net
 print(f'Emails to parse:\n{emails}')
 
 # 2.1 Email pattern build-up #
-#
+# ----------------------------------------------------------------------
 print(f"Pattern match for"
       f"\n[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net){sep_marker}")
 pattern20 = re.compile(r'[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)')
@@ -354,7 +356,10 @@ matches20 = pattern20.finditer(emails)
 
 for match20 in matches20:
     print(match20)
+# ----------------------------------------------------------------------
 
+# 2.2 Email pattern, Corey's cheat sheet #
+# ----------------------------------------------------------------------
 ln_brk()
 print("Email regular expression from Corey's cheat sheet:")
 print(f'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+{sep_marker}')
@@ -373,4 +378,11 @@ regex_url = '''
 # ########################   3. URLs   ######################### #
 '''
 print(regex_url)
-# Stopped at 14:00
+
+urls = '''
+https://www.google.com
+http://coreyms.com
+https://youtube.com
+https://www.nasa.gov
+'''
+# Stopped at 39:00
