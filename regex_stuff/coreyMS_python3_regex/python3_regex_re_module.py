@@ -1,35 +1,37 @@
-# ################################################################## ###
-# ###                                                                ###
-# ###   Python Tutorial: re Module - How to Write and Match          ###
-# ###   Regular Expressions (Regex)                                  ###
-# ###                                                                ###
-# ###   Corey Schafer: https://www.youtube.com/watch?v=K8L6KVGG-7o   ###
-# ###   Tutorial files (code_snippets/Python-Regular_Expressiosns):  ###
-# ###   https://github.com/CoreyMSchafer/                            ###
-# ###                                                                ###
-# ###   INDEX:                                                       ###
-# ###     1. Simple (simple.py)                                      ###
-# ###       1.1. Raw strings                                         ###
-# ###       1.2. re.compile method                                   ###
-# ###       1.3. finditer                                            ###
-# ###       1.4. Use index of variable to grab match                 ###
-# ###       1.5. Metacharacters (need to be escaped with \)          ###
-# ###       1.6. Metacharcters - pattern matching                    ###
-# ###           1.6.1. Character classes                             ###
-# ###           1.6.2. Anchors                                       ###
-# ###           1.6.3. Quantifiers                                   ###
-# ###       1.7. Examples (patterns: metacharcters, anchors,         ###
-# ###            boundaries)                                         ###
-# ###           1.7.1 Phone numbers                                  ###
-# ###               - No quatifiers                                  ###
-# ###               - Quantifiers                                    ###
-# ###                                                                ###
-# ###     2. Emails (emails.py)                                      ###
-# ###                                                                ###
-# ###     3. URLs (urls.py)                                          ###
-# ###                                                                ###                                                                ###
-# ###                                                                ###
-# ################################################################## ###
+# ######################################################################### ###
+# ###                                                                       ###
+# ###   Python Tutorial: re Module - How to Write and Match Regular         ###
+# ###   Expressions (Regex)                                                 ###
+# ###                                                                       ###
+# ###   Corey Schafer: https://www.youtube.com/watch?v=K8L6KVGG-7o          ###
+# ###   Tutorial files (code_snippets/Python-Regular_Expressiosns):         ###
+# ###   https://github.com/CoreyMSchafer/                                   ###
+# ###                                                                       ###
+# ###   INDEX:                                                              ###
+# ###     1. Simple (simple.py)                                             ###
+# ###       1.1. Raw strings                                                ###
+# ###       1.2. re.compile method                                          ###
+# ###       1.3. finditer                                                   ###
+# ###       1.4. Use index of variable to grab match                        ###
+# ###       1.5. Metacharacters (need to be escaped with \)                 ###
+# ###       1.6. Metacharcters - pattern matching                           ###
+# ###           1.6.1. Character classes                                    ###
+# ###           1.6.2. Anchors                                              ###
+# ###           1.6.3. Quantifiers                                          ###
+# ###       1.7. Examples (patterns: metacharcters, anchors, boundaries)    ###
+# ###           1.7.1 Phone numbers                                         ###
+# ###               - No quatifiers                                         ###
+# ###               - Quantifiers                                           ###
+# ###           1.7.2. Alpha characters pattern matching                    ###
+# ###               - Mr or Mr. with optional character "?"                 ###
+# ###               - Mr, Mr., Ms, Ms., Mrs, Mrs. and name                  ###
+# ###                 using group (Mr|Ms|Mrs)\.?                            ###
+# ###     2. Emails (emails.py)                                             ###
+# ###           2.1                                                         ###
+# ###     3. URLs (urls.py)                                                 ###
+# ###                                                                       ###                                                                ###
+# ###                                                                       ###
+# ######################################################################### ###
 
 import re
 
@@ -70,7 +72,12 @@ sentence = 'Start a sentence and then bring it to an end'
 # 1.1 Raw strings - prefaced with an r - tells python not to handle
 #     backslashes "\" in any special way
 # ----------------------------------------------------------------------
+print(f"Raw - strings prefaced with an r - tells python not "
+      f"\nto handle the escape character '\\' in any special way{sep_marker}")
+print(r"\tTab using backslash as an escape")
 print('\tTab')      # backslash as an escape (tab)
+ln_brk()
+print(r"\tTab using using 'r' to ignore \ as escape character")
 print(r'\tTab')     # Ignore backslash as an escape
 # ----------------------------------------------------------------------
 ln_brk()
@@ -103,13 +110,18 @@ ln_brk()
 # 1.5 Metacharacters - need to be escaped with backslash "\"
 # ----------------------------------------------------------------------
 # Period not escaped
+print(f"Using an unescaped period returns all characters "
+      f"except new line{sep_marker}")
 pattern1 = re.compile(r'.')  # period: all characters except new line
 matches1 = pattern1.finditer(text_to_search)
 
+count = 0
 for match1 in matches1:
     print(match1)
 
 # Period escaped
+ln_brk()
+print(f"Using an escaped period \\.{sep_marker}")
 pattern2 = re.compile(r'coreyms\.com')
 matches2 = pattern2.finditer(text_to_search)
 
@@ -129,7 +141,7 @@ ln_brk()
 
 # 1.6.1 Character Classes #
 # Check for numbers 0-9
-print(r"Match all digits 0-9 with \d")
+print("Match all digits 0-9 with \\d" + sep_marker)
 pattern3 = re.compile(r'\d')  # backslash d: digits 0-9
 matches3 = pattern3.finditer(text_to_search)
 
@@ -138,7 +150,7 @@ for match3 in matches3:
 
 # Check for non-digits that are not 0-9
 ln_brk()
-print(r"Match all non-digits (not 0-9) with \D")
+print(f"Match all non-digits (not 0-9) with \\D{sep_marker}")
 pattern4 = re.compile(r'\D')
 matches4 = pattern4.finditer(text_to_search)
 
@@ -147,7 +159,7 @@ for match4 in matches4:
 
 # Check for word character (a-z, A-Z, 0-9, _)
 ln_brk()
-print(r"Match all word characters (a-z, A-Z, 0-9, _) with \w")
+print(f"Match all word characters (a-z, A-Z, 0-9, _) with \\w{sep_marker}")
 pattern5 = re.compile(r'\D')
 matches5 = pattern5.finditer(text_to_search)
 
@@ -156,7 +168,8 @@ for match5 in matches5:
 
 # Check for non-word characters - not (a-z, A-Z, 0-9, _)
 ln_brk()
-print(r"Match all non-word characters (not (a-z, A-Z, 0-9, _)) with \W")
+print(f"Match all non-word characters (not (a-z, A-Z, 0-9, _)) with \\W"
+      f"{sep_marker}")
 pattern6 = re.compile(r'\W')
 matches6 = pattern6.finditer(text_to_search)
 
@@ -167,7 +180,8 @@ for match6 in matches6:
 # 1.6.2 Anchors (position) #
 # Check for literal with leading word boundry - \b
 ln_brk()
-print(r"Match all literal 'Ha' that have a leading word boundary with \b")
+print(f"Match all literal 'Ha' that have a leading word boundary with \\b"
+      f"{sep_marker}")
 pattern7 = re.compile(r'\bHa')
 matches7 = pattern7.finditer(text_to_search)
 
@@ -176,7 +190,8 @@ for match7 in matches7:
 
 # Check for literal with trailing word boundry - \b
 ln_brk()
-print(r"Match all literal 'Ha' that have a trailing word boundary with \b")
+print(f"Match all literal 'Ha' that have a trailing word boundary with \\b"
+      f"{sep_marker}")
 pattern8 = re.compile(r'Ha\b')
 matches8 = pattern8.finditer(text_to_search)
 
@@ -185,7 +200,8 @@ for match8 in matches8:
 
 # Check for literal with leading & trailing word boundry - \b
 ln_brk()
-print(r"Match all literal 'Ha' that have a leading & trailing word boundary with \b")
+print(f"Match all literal 'Ha' that have a leading & trailing word"
+      f"boundary with \\b")
 pattern9 = re.compile(r'\bHa\b')
 matches9 = pattern9.finditer(text_to_search)
 
@@ -287,4 +303,42 @@ matches17 = pattern17.finditer(text_to_search)
 for match17 in matches17:
     print(match17)
 # ----------------------------------------------------------------------
+
+# 1.7.2 Alpha characters #
+# Alpha character pattern match for Mr or Mr.
+ln_brk()
+print("Alpha character pattern match for Mr or Mr. with Mr\\.?" + sep_marker)
+pattern18 = re.compile(r'Mr\.?')
+matches18 = pattern18.finditer(text_to_search)
+
+for match18 in matches18:
+    print(match18)
+
+# Alpha character pattern match for Mr, Mr., Ms, Mrs. and a name
+ln_brk()
+print(f"Alpha character pattern match for\nMr, Mr., Ms, Mrs. and"
+      f" a name with a group (Mr|Ms|Mrs) {sep_marker}")
+# could be re.compile(r'M(r|s|rs)\.?\s[A-Z]\w*') but it is not
+# as clear so below is better as it is easier to read
+pattern19 = re.compile(r'(Mr|Ms|Mrs)\.?\s[A-Z]\w*')
+matches19 = pattern19.finditer(text_to_search)
+
+for match19 in matches19:
+    print(match19)
+# ----------------------------------------------------------------------
+
+# ###########################   2. Emails   ############################
+
+
+emails = '''
+davidmltz@gmail.com
+david.milatz@yahoo.com
+David.Milatz@edgenuity.com
+'''
+
+pattern20 = re.compile(r'')
+matches20 = pattern20.finditer(emails)
+
+for match20 in matches20:
+    print(match20)
 # Stopped at 14:00
