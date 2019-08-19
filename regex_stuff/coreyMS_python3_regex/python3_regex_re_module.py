@@ -385,4 +385,32 @@ http://coreyms.com
 https://youtube.com
 https://www.nasa.gov
 '''
-# Stopped at 39:00
+
+print(f'URLs to parse:\n{urls}')
+
+# 3.1 URL pattern using groups ( ): some.group() #
+# ----------------------------------------------------------------------
+print("URLs regular expression build-up using group '( )':")
+print(f'https?://(www\.)?(\w+)(\.\w+){sep_marker}')
+
+pattern22 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+matches22 = pattern22.finditer(urls)
+
+for match22 in matches22:
+    print(match22.group(3))
+# ----------------------------------------------------------------------
+
+
+# 3.2 Using group "back reference" (some.group(1)) with sub()  #
+#     to access data                                           #
+# ----------------------------------------------------------------------
+ln_brk()
+print(f"Using group 'back reference' (some.group(1))"
+      f"with sub() to access data:")
+print(f'https?://(www\.)?(\w+)(\.\w+)')
+print(rf"pattern23.sub(r'\2\3', urls){sep_marker}")
+
+pattern23 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+
+subbed_urls = pattern23.sub(r'\2\3', urls)
+print(subbed_urls)
