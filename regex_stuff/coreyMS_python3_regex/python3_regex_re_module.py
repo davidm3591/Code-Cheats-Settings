@@ -328,17 +328,49 @@ for match19 in matches19:
 # ----------------------------------------------------------------------
 
 # ###########################   2. Emails   ############################
+ln_brk()
+regex_email = '''
+# #######################   2. Emails   #########################
+'''
 
+print(regex_email)
 
 emails = '''
 davidmltz@gmail.com
+david.milatz@WIU.edu
 david.milatz@yahoo.com
 David.Milatz@edgenuity.com
+david-53-milatz@some-place.net
 '''
 
-pattern20 = re.compile(r'')
+print(f'Emails to parse:\n{emails}')
+
+# 2.1 Email pattern build-up #
+#
+print(f"Pattern match for"
+      f"\n[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net){sep_marker}")
+pattern20 = re.compile(r'[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)')
 matches20 = pattern20.finditer(emails)
 
 for match20 in matches20:
     print(match20)
+
+ln_brk()
+print("Email regular expression from Corey's cheat sheet:")
+print(f'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+{sep_marker}')
+
+pattern21 = re.compile(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+')
+matches21 = pattern21.finditer(emails)
+
+for match21 in matches21:
+    print(match21)
+# ----------------------------------------------------------------------
+
+
+# ###########################   3. URLs   ############################ #
+ln_brk()
+regex_url = '''
+# ########################   3. URLs   ######################### #
+'''
+print(regex_url)
 # Stopped at 14:00
