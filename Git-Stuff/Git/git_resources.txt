@@ -1,0 +1,12 @@
+https://git-scm.com/book/en/v2/Git-Basics-Tagging
+
+https://realpython.com/python-git-github-intro/#putting-it-all-together-simple-git-workflow
+
+https://realpython.com/python-testing/
+
+
+
+
+
+
+https://www.geeksforgeeks.org/

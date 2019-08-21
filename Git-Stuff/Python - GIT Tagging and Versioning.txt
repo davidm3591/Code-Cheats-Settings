@@ -1,0 +1,17 @@
+                       Python - GIT Tagging and Versioning
+-----------------------------------------------------------------------------------
+
+
+
+
+Notes
+-----------------------------------------------------------------------------------
+Tagging a specific commit point
+git tag -a v0.3-beta -m "Release 0.3 (Beta)" 70edf22
+
+git tag -a v0.1-alpha -m "Release 0.1 (Alpha)" 699c1ad
+
+Resources
+-----------------------------------------------------------------------------------
+Pip: Install a specific github repo tag or branch
+    https://coderwall.com/p/-wbo5q/pip-install-a-specific-github-repo-tag-or-branch
