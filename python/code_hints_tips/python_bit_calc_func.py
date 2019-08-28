@@ -19,7 +19,9 @@ num_of_64_bits = n_possible_values(64)  # 64 bits = 8 bytes
 print(num_of_64_bits)
 
 # ASCII encoding could have used only 7 bits
-# Using 8 bits left 128 code points unused
+# but 7 bits does not account for values that
+# are not clean powers of 2. Using 8 bits left
+# 128 code points/values unused
 num_of_7_bits = n_possible_values(7)  # 7 bits
 print(num_of_7_bits)
 # ------------------------------------------------------------
