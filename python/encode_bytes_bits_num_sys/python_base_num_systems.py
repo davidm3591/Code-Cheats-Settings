@@ -62,5 +62,5 @@ print(x)
 
 import locale
 
-y = locale.getpreferredencoding()
+y = locale.getpreferredencoding()   # returns cp1252
 print(y)
