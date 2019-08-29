@@ -1,0 +1,13 @@
+# Helpful aliases if you are using bash and mintty in Windows
+
+function run_python3() {
+	winpty py -3 $@
+}
+
+alias python=run_python3
+
+function run_python2() {
+	winpty py -2 $@
+}
+
+alias python2=run_python2
