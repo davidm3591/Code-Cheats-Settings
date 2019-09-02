@@ -111,6 +111,8 @@ COMMIT A FILE (LOCAL REPOSITORY)
     OR STAGE AND COMMIT IN ONE COMMAND
     $ git commit -am
 
+EDIT LAST COMMIT MESSAGE
+    $ git commit --amend
 
 GET LIST/LOG OF ALL COMMITS
     $ git log (git log --oneline)

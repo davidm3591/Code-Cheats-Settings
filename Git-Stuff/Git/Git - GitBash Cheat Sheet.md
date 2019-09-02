@@ -35,9 +35,10 @@
 | Add specific files to staging | $ git add filename<span>.py</span> |
 | Remove file from staging | $ git reset file<span>name.</span>py |
 | Remove all files from staging | $ git reset HEAD |
+| Discard file edit/change(s) | $ git checkout filename<span>.</span>py |
 | Commit a file | $ git commit -m <span>"Commit message</span>" |
 | Stage and commit a file | $ git commit -am <span>"Commit message</span>" |
-| Discard file edit/change(s) | $ git checkout filename<span>.</span>py |
+| Edit last commit message | $ git commit --amend |
 | Check files that GIT is tracking | $ git ls-files |
 | Untrack a file | $ git rm --cached filename<span>.</span>py |
 | Stashing file edits instead of add and commit | $ git stash |
