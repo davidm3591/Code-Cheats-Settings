@@ -1,0 +1,16 @@
+https://realpython.com/courses/python-git-github-intro/
+https://realpython.com/pyinstaller-python/
+https://python101.pythonlibrary.org/chapter40_py2exe.html
+https://realpython.com/python-main-function/#best-practices-for-python-main-functions
+https://realpython.com/courses/intro-object-oriented-programming-oop-python/
+
+https://chriswarrick.com/blog/2014/09/15/python-apps-the-right-way-entry_points-and-scripts/
+
+https://chriswarrick.com/guides/
+
+https://letscodepython.com/blog/2017/12/27/building-guis-wxpython/
+https://realpython.com/python-gui-with-wxpython/
+https://www.tutorialspoint.com/wxpython/
+https://wiki.wxpython.org/How%20to%20Learn%20wxPython
+https://wxpython.org/
+https://www.techiediaries.com/python-gui-wxpython-tutorial-urllib-json/
