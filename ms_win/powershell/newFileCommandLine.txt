@@ -1,0 +1,2 @@
+New Dash Item Space Dash ItemType Space file Space name_of_file.ext
+New-Item -ItemType file swings.py

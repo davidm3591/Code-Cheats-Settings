@@ -1,0 +1,6 @@
+Rename-Item -Path "c:\logfiles\daily_file.txt" -NewName "monday_file.txt"
+
+Rename-Item -Path "E:\2-dev-Web-Prgmg\python\_modernPython3Bootcamp-Udemy\python\exercises_10022018\functions\star_args.py" -NewName "star_args_kwargs.py"
+
+shortcut if you are at the directory where the file resides:
+Rename-Item "star_args.py"  -NewName "star_args_kwargs.py"

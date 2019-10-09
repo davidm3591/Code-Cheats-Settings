@@ -1,0 +1,92 @@
+-------- PowerShell --------
+
+Create directory: mkdir directory_name
+
+Create new file: New-Item -ItemType File name_of_file.py(txt, whatever)
+
+Rename a file: Rename-Item file_name.py -newname my_file_name.py(txt, whatever)
+
+Print Working Directory (current directory): pwd
+
+Open a MS app from cmd: start <filename.xxxx>S
+
+Windows
+If you’re using Windows then here’s your list of commands:
+ 
+my computer's network name: hostname
+
+make directory: mkdir
+
+change directory: cd
+
+list directory : ls (unix command in ps) (or dir windows command)
+
+remove directory rmdir
+
+push directory: pushd
+
+pop directory: popd
+
+copy a file or directory: cp
+
+robust copy: robocopy
+
+move a file or directory: mv
+
+page through a file: more
+
+print the whole file: type 
+
+run a command on lots of files: forfiles
+
+find files: dir -r
+
+find things inside files: select-string
+
+read a manual page: help
+
+find what man page is appropriate: helpctr
+
+print some arguments: echo
+
+export/set a new environment variable: set
+
+exit the shell: exit
+
+Get-NetAdapter: mac address
+
+ipconfig /all: get all ip info
+
+getmac /v: mac address
+
+Test-NetConnection: ping localhost
+
+DANGER! become super user root DANGER!: runas
+
+Drill, drill, drill! Drill until you can say these phrases right away when you see that word. Then drill the inverse, so that you read the phrase and know what command will do that. You’re building your vocabulary by doing this, but don’t spend so much time you go nuts and get bored.
+
+-------- Rename a file --------
+Rename-Item -Path "c:\logfiles\daily_file.txt" -NewName "monday_file.txt"
+
+Rename-Item -Path "E:\2-dev-Web-Prgmg\python\_modernPython3Bootcamp-Udemy\python\exercises_10022018\functions\star_args.py" -NewName "star_args_kwargs.py"
+
+Shortcut if you are at the directory where the file resides:
+Rename-Item "star_args.py"  -NewName "star_args_kwargs.py"
+-------------------------------
+
+-------- Delete a file --------
+remove-item file-path
+Remove-Item C:\test\testFile.txt
+-------------------------------
+
+-------- PYTHON Shell --------
+
+Upgrade pip: "python -m pip install -U pip"
+
+Clear Python Interpreter window, PowerShell:
+>>> import os
+>>> os.system('cls')
+
+>>> import os
+>>> print(os.getcwd())
+C:\Users\dmilatz

@@ -1,0 +1,27 @@
+Steps to setup command for Sublime Text for use in cmd – 
+1. Open the environment variable setup option in Windows. 
+
+2. In the environment variable setup window, create a new system variable by naming it as "SUBLIME" with value having the full path to its installation folder like - "C:\Program Files\Sublime Text 3" and save it. 
+
+3. In the environment variable setup window, edit the System and User "path" variable and add one more entry for "%SUBLIME%" and close the environment variable setup window and cmd(if already open).
+ 
+After doing above you will be able to run "subl" command in cmd to open Sublime Text using cmd. 
+
+Useful cmd commands for sublime text – 
+
+1. To open sublime text - subl 
+
+2. To open sublime text with a new file - subl filename.txt 
+
+3. To open sublime text with an old file, first to go the file location using cd command in cmd and then type - subl filename.txt 
+
+4. To open sublime text with an old project folder, first to go the folder location using cd command in cmd and then type – 
+subl foldername
+
+Note : Above commands will open a new window of Sublime Text even if it is already open. To open any file or folder inside already open sublime text window use "--add" option after the command e.g.- 
+subl filename.txt –add
+subl foldername --add
+
+A tutorial showing how to quickly open Sublime Text using the command prompt(cmd) or terminal in Windows operating system. It also shows how you can open any file or project folder in sublime text using command prompt(cmd) or terminal in Windows.
+
+Available: https://www.youtube.com/watch?v=901ZXJVP8NE
