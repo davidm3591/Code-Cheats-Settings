@@ -6,3 +6,14 @@
 #         pass
 #     else:
 #         sys.exit(None)
+
+
+# import sys
+# def brk_if_arg(test_value):
+#     print(test_value)
+#     test_stop = input("\nContinue loop (y/n)? ")
+#     test_stop = test_stop.lower()
+#     if test_stop == 'y':
+#         pass
+#     else:
+#         sys.exit(None)
