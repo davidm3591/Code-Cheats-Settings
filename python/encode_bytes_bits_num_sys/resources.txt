@@ -1,1 +1,10 @@
+Handling Unicode strings in Python
 https://blog.emacsos.com/unicode-in-python.html
+
+what is python repr mean
+
+https://realpython.com/python-encodings-guide/
+
+Got Unicode?
+Statistical Symbols on the Web
+http://personal.psu.edu/ejp10/psu/gotunicode/statsym.html
