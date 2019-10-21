@@ -1,0 +1,73 @@
+Remote Connect
+
+Dell-Standalone
+c-l-4063.edgenuity.wnorth.wn
+
+Katherine's old desktop
+c-d-1558.edgenuity.wnorth.wn
+
+My desktop
+C-D-4295.edgenuity.wnorth.wn
+c-d-4295.edgenuity.wnorth.wn
+
+cisco anyconnect secure mobility client
+vpn.edgenuity.net
+(login edgenuity\david.milatz)
+---------------------------------------------
+
+bit bucket login
+dmilatz
+myRedhead12B!
+SSH Key:
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+fq067qwopjLrqexQ7nsQVclHCWGQUC0CyQNhBGkS7oWgemI/K18bprFtwpfr1cm9p+ajuiIaMGxcAlfHXfHE8ovHOJngbuASOqR/MNo8nPCdAmFQCc7Xm8cWR4Cwjtdf/z0efDHpBLNi8oHxrBTDOwf3d8sdd7MNRfAOkI79o393NqlMj/KFtkuZ6fgCTAJCIj4aaZEqvfAQP7ZWGgTlJHySaz6lAAeNdZRA2ohULcaA9iro/1hFRfnwjpqwR/LYgXSKqu0tswnJvLvLze++r1JZ+Sbx6XwDYBEzfGkDMMYnGOkhzFF/nItd5jU0lGZDP+k73q1T+IFr041WsyV1 David.milatz@C-D-4295
+
+
+UPDATE local repo
+***********************
+git pull origin master
+git status
+***********************
+
+SPECIFY FILE TO PUSH
+***********************
+1. git commit root/path/morepath/yourfile.js
+2. git status
+3. git push origin master
+-OR-
+1. git status
+2. git add {File_Name} //the file name you have changed
+3. git status
+4. git commit -m '{your_message}'
+5. git push origin master
+***********************
+
+PUSH TO LOCAL TO MASTER
+*******************************************************
+1. git add . will add all files (tracked and untracked)
+2. git commit -m "message for commit"
+3. git push origin master
+(You always need to add and commit before pushing.)
+*******************************************************
+
+ADD ONLY TRACKED FILES THAT HAVE BEEN CHANGED
+*********************************************************
+git add -u (will add all files for commit that are 
+            a) already being tracked and 
+            b) have been modified since the last commit)
+*********************************************************
+
+REMOVE ALL STAGED FILES WITHOUT CHANGING CONTENT (LOCAL)
+********************************************************
+git reset
+********************************************************
+
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   common/closereaders/_templates/online-version/closereader-full-width-image.gif
+        new file:   common/closereaders/_templates/online-version/template-OC.xml
+        new file:   common/closereaders/_templates/online-version/template-OC_01.html
+        new file:   common/closereaders/_templates/online-version/template-OC_02.html
+        new file:   common/closereaders/_templates/online-version/template-OC_03.html
+        new file:   common/closereaders/_templates/online-version/template-OC_04.html
