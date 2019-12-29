@@ -83,9 +83,25 @@ Remove-Item C:\test\testFile.txt
 
 Upgrade pip: "python -m pip install -U pip"
 
-Clear Python Interpreter window, PowerShell:
+
+CLEAR PYTHON INTERPRETER WINDOW FROM INSIDE PYTHON INTERPRETER/SHELL:
 >>> import os
 >>> os.system('cls')
+
+
+CHANGE DIRECTORY FROM INSIDE PYTHON INTERPRETER/SHELL
+>>> os.chdir('D:\projects\extraction_tool_project\extract_application\equation_code_fix\extract_build')
+
+
+RUN PROGRAM FROM INSIDE PYTHON INTERPRETER/SHELL
+>>> import subprocess
+>>> subprocess.call(['python', 'helloworld.py'])
+
+
+GET THE CURRENT WORKING DIRECTORY FROM INSIDE PYTHON INTERPRETER/SHELL
+>>> import os
+>>> os.getcwd()
+
 
 >>> import os
 >>> print(os.getcwd())
