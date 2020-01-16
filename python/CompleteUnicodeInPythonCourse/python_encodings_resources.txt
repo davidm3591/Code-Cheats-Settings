@@ -1,0 +1,11 @@
+https://docs.python.org/3/howto/unicode.html
+
+https://blog.feabhas.com/2019/02/python-3-unicode-and-byte-strings/
+
+https://realpython.com/python-encodings-guide/
+
+https://realpython.com/python-strings/
+
+https://stackoverflow.com/questions/10288016/usage-of-unicode-and-encode-functions-in-python
+
+b"El Ni\xc3\xb1o".decode("utf-16")
