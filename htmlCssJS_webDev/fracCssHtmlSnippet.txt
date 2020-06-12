@@ -1,0 +1,9 @@
+// Fraction CSS
+.denom, .numer { display: block;  width:100%; text-align:center; }
+.numer { border-bottom: 1px solid black; } 
+.frac-wrap { line-height: 1em; vertical-align: middle; display: inline-block; }
+
+<span class="frac-wrap">
+    <span class="numer">0.00358</span>
+    <span class="denom">0.2269</span>
+</span>
