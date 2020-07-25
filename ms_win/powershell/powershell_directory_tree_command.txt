@@ -1,3 +1,7 @@
 PS C:\> tree C:\bitBucket.org\edge-prod-content\EdgeApps\html-doc-builder\common  /f
 
 PS C:\> tree C:\extract_application /f
+
+PS C:\> tree C:\extract_application /f
+
+tree D:\projects\extraction_tool_project\extract_application /f
