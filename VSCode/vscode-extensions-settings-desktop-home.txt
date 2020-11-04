@@ -1,0 +1,16 @@
+Anaconda Extension
+Go
+IntelliSense for CSS class names in HTML
+Live Server
+Open in Browser
+Peacock
+Python
+vscode-icons
+Winter is Coming
+YAML
+*Auto Rename Tag - disabled - may break undo-redo chain
+
+Future
+JavaScript (ES6) code snippets
+Bookmarks
+Project Manager
