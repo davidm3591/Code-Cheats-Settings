@@ -1,0 +1,18 @@
+Excerpt From Learn Visual Studio (2020) - Udemy
+
+4. Writing and Formatting Code
+    4.21 - Snippets
+        1. 
+        2. Resources
+            2.1 Snippet generator: http://vsc-snippets.herokuapp.com/
+    4.22 - Working With Markdown
+        1. VSCode tools/extensions
+            1. "Markdown 'Open Preview'" - tools
+            2. "Markdown 'Open Preview to the Side" - realtime preview for coding - tools
+            3. markdownlint - extensions
+            4. markdown shortcuts - extensions
+            5. markdown toc - extensions
+        2. Resources
+            2.1 Markdown worksheet: https://github.com/jamesqquick/markdown-worksheet
+            2.2 GitHub Markdown PDF Cheat Sheet: https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf
+            2.3 GitHub Site Wiki: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
