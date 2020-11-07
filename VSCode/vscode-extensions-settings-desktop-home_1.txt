@@ -1,0 +1,12 @@
+Anaconda Extension Pack
+GitLens
+Go
+IntelliSence for CSS classes
+Live Server
+Markdown All in One
+Markdown Preview Enhanced
+Open in Browser
+Peacock
+Python (Microsoft)
+Winter is Coming
+YAML
