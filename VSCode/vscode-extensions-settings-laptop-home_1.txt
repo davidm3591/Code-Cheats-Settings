@@ -1,0 +1,17 @@
+Anaconda Extension Pack
+Bracket Pair Colorizer
+Bracket Pair Colorizer 2
+Community Material Theme
+Go
+IntelliSence for CSS classes
+Live Server
+Markdown Preview Enhanced
+Material Theme
+Open in Browser
+Peacock
+Prettier Code formatter
+Python (Microsoft)
+Rainbow Brackets
+vscode-icons
+Winter is Coming Theme
+YAML
