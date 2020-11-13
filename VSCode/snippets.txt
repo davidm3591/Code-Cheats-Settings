@@ -1,0 +1,67 @@
+CR - Inline image
+<p>
+<img src="0300-02-01-CR1-03.jpg" alt="Sunset sees Eddie at her locker. Why is he trying to get in?">
+<br>
+<span style="display: block; text-align: center; font-size: 12px;">
+Sunset sees Eddie at her locker. Why is he trying to get in?
+</span>
+</p>
+
+HTML Frame Exit/Entry Audio Delete
+<head>
+    <title>Code for Entry & Exit Audio Delete</title>
+    <script type="text/javascript" src="../../../../../common/scripts/jquery-latest.js"></script>
+    <!-- Defer api_connector.js REQUIRED -->
+    <script defer type="text/javascript" src="../../../../../common/scripts/api_connector.js"></script>
+    <link href="../../../../../common/css/uikit.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../../common/css/main.css" rel="stylesheet" type="text/css" />
+    <!-- Script to ingnore entry and exit audio autoplay -->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => stopAudio());
+
+        function stopAudio() {
+            API.Frame.entryAudioFilename = null;
+            API.Frame.exitAudioFilename = null;
+        }
+    </script>
+</head>
+
+HTML5 Video player
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Video Player</title>
+
+    <!-- Video Player -->
+    <script type="text/javascript" src="../../../../../common/video-player/html5/json.js"></script>
+    <script type="text/javascript" src="../../../../../common/video-player/html5/html5player.js"></script>
+    <link href="../../../../../common/video-player/html5/html5player.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <div>
+        <video id="home_video_js" width="360" height="200" preload webkit-playsinline autoplay controls>
+            <source src="../../../../../common/video-player/12031-12-02-20-Tour_ASASSN14-li.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        </video>
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+// Stacked Fraction CSS
+.denom, .numer { display: block;  width:100%; text-align:center; }
+.numer { border-bottom: 1px solid black; } 
+.frac-wrap { line-height: 1em; vertical-align: middle; display: inline-block; }
+<!-- Stacked Fraction HTML -->
+<span class="frac-wrap">
+    <span class="numer">0.00358</span>
+    <span class="denom">0.2269</span>
+</span>
