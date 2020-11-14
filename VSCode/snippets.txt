@@ -1,3 +1,10 @@
+Creating Snippets - VSCode (Resource-snippet generator: http://vsc-snippets.herokuapp.com/)
+
+1. Open Settings
+2. Select User Snippet
+3. Select language from DD
+
+
 CR - Inline image
 <p>
 <img src="0300-02-01-CR1-03.jpg" alt="Sunset sees Eddie at her locker. Why is he trying to get in?">
