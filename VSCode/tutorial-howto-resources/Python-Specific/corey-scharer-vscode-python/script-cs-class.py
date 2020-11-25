@@ -14,8 +14,26 @@ def greet(who_to_greet):
 
 print(greet('World'))
 print(greet('David'))
+print("")
+
+
 # ======================================
 # Stopped video at 23:26
-# ======================================
-print("")
 print("Stopped video at 23:26")
+# ======================================
+
+def print_stuff(stuff_to_print):
+    """Print whatever I hand off to it"""
+    print(stuff_to_print)
+
+heading = "Class Notes\n\tTopic and Time"
+sep_line = "------------------------------------------------------------------"
+
+vscode_venv = "\tCreating  a Virtual Environment '('venv')' at 26:12"
+
+print_stuff(heading)
+print_stuff(sep_line)
+
+print_stuff(vscode_venv)
+
+print_stuff(sep_line)
