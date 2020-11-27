@@ -31,6 +31,7 @@ sep_line = "------------------------------------------------------------------"
 
 vscode_venv = "Creating  a Virtual Environment (venv) at 26:12"
 code_formatter = "Installing PEP 8, or Black to format code at 32:17"
+git_setup = "Setting up and using GIT in VS Code at "
 
 
 print_stuff(sep_line)
