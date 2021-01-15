@@ -1,0 +1,18 @@
+The key fingerprint is:
+SHA256:4EjKYfROZAfe24T7Y1toz7hP2oHNV8vphkHyOZuod4M dmilatz@David-Desktop
+The key's randomart image is:
++---[RSA 3072]----+
+|  . +..          |
+| . = o .         |
+|  o = + .        |
+| o * o *  . .    |
+|  o o + S  + ..  |
+|       . =  =o o |
+|        B *o.*+  |
+|       o @Eo*..  |
+|        *==. o.  |
++----[SHA256]-----+
+
+
+$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDPp1qlWuePIJSSVl/HINkNGSfXoeU5f5WEYNYoBFk4lWSup1lm6xVRseVHlP5mzWwDcKb1wlxAJCtQDcyr8inkYfTpO7zDJ8r2V+QZNHoYpQ3dNsPCEWSUqt+DYt5r6QtO+6i92XCbQ2qRj2Df1BH2cSspHtPi/3398japHwjxdL1bRV6TjUObVw8aTEozXsoAzdOfaZJRvjH3MYa83hLDKxV857cCIiLcOGONU8E7vYcl1iFfqfJoz+taa+uZXASLCAp7XQtq+UM7DaG7DCmmS+USnAULxkgnp5ddY4llOexJO2mU2JFrON1Eg4YQDYRCHPZTuBYvn+Kpe8ayCvt9ix4pWIT88QIU+dm2gy/R1Dsa5DBDAm2EWZGmsJT26ITdKYMqOLI3xrPqY8vkjULL0tYFZXHVsGs7/YR89VDDeYTpY6fkKmqpSRBfCCm9wDQCMfQHjpfHdeGJ7VSifg7/3imJJyxSG1td85oaoGiTZjTvNfzk8KOESq7w525Oavk= dmilatz@David-Desktop
