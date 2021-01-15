@@ -12,3 +12,21 @@ Add your SSH private key to the ssh-agent. If you created your key with a differ
 
 $ ssh-add ~/.ssh/id_ed25519
 
+
+
+
+Asus Laptop
+The key fingerprint is:
+SHA256:DWJgcMNLwjebLRP3OiTTJ8sbJ5fZejflN5UlFfdFw6Y davidmltz@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+| ..o=         .+=|
+|  oo*o.        o*|
+|   + Xo..     o..|
+|    O.=.oo   E. .|
+|     B =S+.    .o|
+|      B = .   ...|
+|       B .   o  .|
+|      . . . o ...|
+|         . . . ..|
++----[SHA256]-----+
