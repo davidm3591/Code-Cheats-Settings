@@ -1,0 +1,21 @@
+
+To check if Python is installed on your system or not, open up your terminal by pressing Ctrl + Alt + T. Type in "python" and press Enter.
+
+
+How to install Python on Linux
+Step-by-step instructions for installing the latest Python instead of (or alongside) an older version on Linux.
+https://opensource.com/article/20/4/install-python-linux
+
+https://opensource.com/article/17/6/set-path-linux
+How to set your $PATH variable in Linux
+Telling your Linux shell where to look for executable files is easy, and something everyone should be able to do.
+
+
+How to Install Python in Ubuntu
+https://www.makeuseof.com/install-python-ubuntu/
+
+How to Install Python PIP on Windows, Mac, and Linux
+https://www.makeuseof.com/tag/install-pip-for-python/
+
+A Beginners Guide to Snaps in Linux – Part 1
+https://www.tecmint.com/install-snap-in-linux/
