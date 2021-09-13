@@ -1,6 +1,8 @@
 import re
 
 # 
+# Part 1: Introduction
+# 
 # Corey Schafer
 # Python Tutorial: re Module - How to Write & Match Regular Expressions (Regex)
 # https://www.youtube.com/watch?v=K8L6KVGG-7o
