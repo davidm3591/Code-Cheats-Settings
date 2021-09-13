@@ -1,49 +1,46 @@
-VENV
+VENV BUILT-IN MODULE - 3.3 or higher
 
-Built in module - 3.3 or higher
+CREATE
+python -m venv extract_env_1
 
-Create
-> python -m venv name_of_environment
+ACTIVATE
+name_of_environment\Scripts\activate.bat
 
-Activate
-> name_of_environment\Scripts\activate.bat
-
-Verify
+VERIFY
 1. virtual environment will show in parentheses
 (projcect_new_et) C:\Users\david\Desktop>
 
-2. type where python
+2. TYPE "where python"
 c:\Users\david\Desktop\projcect_new_et\Scripts\python.exe
 C:\Users\david\Anaconda3\python.exe
 C:\Users\david\AppData\Local\Microsoft\WindowsApps\python.exe
 
-Verify python version
+VERIFY PYTHON VERSION
 (projcect_new_et) C:\Users\david\Desktop>python --version
 Python 3.7.1
 
-Check installed modules
+CHECK INSTALLED MODULES
 (projcect_new_et) C:\Users\david\Desktop>pip list
 Package    Version
 ---------- -------
 pip        21.2.4
 setuptools 39.0.1
 
-Setting up environment to create requirements.txt file
+
+SETTING UP ENVIRONMENT TO CREATE requirements.txt FILE
 Example with pillow installed
 (projcect_new_et) C:\Users\david\Desktop>pip freeze
 Pillow==8.3.2
 
-
-Delete venv environment
+DELETE VENV ENVIRONMENT
 C:\Users\david\Desktop>rmdir name_of_directory /s
 
-
-Build VENV from requirements.txt
+BUILD VENV FROM REQUIREMENTS.TXT
 pip install -r requirements_extract_env_1.txt
 
 
 
-
+D:\projects-new\extract_application\c_directory_elements\edge_tool_data\environments
 
 
 
