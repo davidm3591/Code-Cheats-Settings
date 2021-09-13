@@ -1,4 +1,5 @@
 import re
+from typing import Pattern
 
 # 
 # Part 2: Practical Applications
@@ -33,7 +34,7 @@ sentence = "Start a sentence and then bring it to an end"
 # 
 # Finding the phone numbers (literal search doesn't work - multiple instances)
 # 
-print() # space
+# print() # space
 # pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d') 
 # matches = pattern.finditer(text_to_search)
 
@@ -49,10 +50,26 @@ print() # space
 pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')
 matches = pattern.finditer(text_to_search)
 
-with open('data.txt', 'r') as f:
+with open('regex_stuff\coreyMS_python3_regex\data.txt', 'r') as f:
     contents = f.read()
 
+    matches = pattern.finditer(contents)
+    
     for match in matches:
+        print(match)
+
+
+# 
+# Matching specific content in brackets
+# 
+pattern_1 = re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d\d')   # match ph nums that
+                                                        # use a . or - separator
+matches_1 = pattern_1.finditer(text_to_search)
+
+with open('regex_stuff\coreyMS_python3_regex\data.txt', 'r') as f:
+    contents = f.read()
+
+    for match in matches_1:
         print(match)
 
 
@@ -62,3 +79,4 @@ with open('data.txt', 'r') as f:
 
 # for match in matches:
 #     print(match)
+
