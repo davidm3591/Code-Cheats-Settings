@@ -110,7 +110,7 @@ for match in matches:
 
 
 # 
-# using lowercase "B" returns search criteria NOT preceeded by
+# using uppercase "B" returns search criteria NOT preceeded by
 #   a word boundry (space or non alpha-numeric character)
 # 
 print() # space
