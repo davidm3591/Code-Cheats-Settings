@@ -8,7 +8,8 @@
 \s      - Whitespace (space, tab, newline)
 \S      - Not Whitespace (space, tab, newline)
 
-\b      - Word Boundary
+ANCHORS
+\b      - Word Boundary (white space or non alpha-numeric characters)
 \B      - Not a Word Boundary
 ^       - Beginning of a String
 $       - End of a String
