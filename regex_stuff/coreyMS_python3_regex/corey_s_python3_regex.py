@@ -28,3 +28,5 @@ Ms Davis
 Mrs. Robinson
 Mr. T
 '''
+
+sentence = 'Start a sentence and bring it to an end.'
