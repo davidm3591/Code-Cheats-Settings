@@ -1,0 +1,95 @@
+2.	Adding Alt Text
+a.	Add text 
+
+Image1-alt: followed by the image alt text under all extraction tags including any audio text. 
+
+Examples:
+
+Single image alt tag
+Image1-alt: Page 139 of graphic novel 'Laika' by Nick Abadzis.
+
+Multiple image alt tags
+
+
+  Image 1	Image 2		Image 3
+
+  _____		 _____		 _____
+ |     |	|     |		|     |
+ |_____|	|_____|		|_____|
+
+
+Image1-alt: Reflection across the y-axis.
+Image2-alt: Reflection across the x-axis.
+Image1-alt: Reflection across the line y=x.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
