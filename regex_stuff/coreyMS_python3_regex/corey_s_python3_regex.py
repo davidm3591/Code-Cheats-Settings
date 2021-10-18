@@ -9,7 +9,24 @@ from common_code_snips import *
 
 # https://www.youtube.com/watch?v=K8L6KVGG-7o"
 
+def exercises(exercise_number):
+    print(f'\nExercise # {exercise_number}')
+
+
+exercise_defined = '''Exercise #1: Simple literal string regex search
+Exercise #2: 
+Exercise #3:
+Exercise #4: 
+Exercise #7:
+Exercise #6: 
+Exercise #3:
+'''
+
+
+
 output_plain_sep_title("Corey Schafer Regex: Python Tutorial: re Module\n\tHow to Write and Match Regular Expressions (Regex)")
+
+
 
 
 regex_chars = '''.       - Any Character Except New Line
@@ -125,6 +142,10 @@ sentence = 'Start a sentence and bring it to an end.'
 '''
 print(sample_data)
 
+print()
+output_plain_sep_mark()
+print(exercise_defined)
+
 output_plain_sep_mark()
 
 # 
@@ -135,6 +156,7 @@ output_plain_sep_mark()
 # print(raw_string)
 # 
 
+exercises(1)
 # 
 # Simple search for literal characters matching 'abc'
 # 
