@@ -13,14 +13,6 @@ def exercises(exercise_number):
     print(f'\nExercise # {exercise_number}')
 
 
-exercise_defined = '''Exercise #1: Simple literal string regex search
-Exercise #2: 
-Exercise #3:
-Exercise #4: 
-Exercise #7:
-Exercise #6: 
-Exercise #3:
-'''
 
 
 
@@ -64,7 +56,7 @@ Methods
 [a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
 '''
 print()
-print("Table of 'regex' Characters")
+print("\tTable of 'regex' Characters\n")
 
 print(regex_chars)
 
@@ -106,11 +98,11 @@ sentence = 'Start a sentence and bring it to an end.'
 
 
 
-output_plain_sep_mark()
-print()
-print("Unless otherwise specified, examples use the following data")
+# output_plain_sep_mark()
+# print()
+# print("Unless otherwise specified, examples use the following data")
 
-print()
+# print()
 
 sample_data = '''
 text_to_search = 
@@ -140,12 +132,30 @@ Mr. T
 
 sentence = 'Start a sentence and bring it to an end.'
 '''
-print(sample_data)
+# print(sample_data)
 
+# output_plain_sep_mark()
+
+example_defined = '''CHARACTERS FOR ALPHA-NUMERIC AND WHITESPACE AND INVERSES
+Example #1: Simple literal string regex search, compiled, output finditer()
+Example #2: Using the dot "." character - any character except new line - must\n\t\tescape to find a period
+Example #3: "\d" character to match all digits (numeric characters)
+Example #4: "\D" character to match all non-digits (non-numeric characters)
+Example #5: "\w" - Word Character (a-z, A-Z, 0-9, _)
+Example #6: "\s"  - Whitespace (space, tab, newline)
+
+ANCHORS
+Example #7: "\\b" - Word Boundary (white space or non alpha-numeric characters)
+Example #8: "^" - Beginning of a String
+Example #9: "$" - End of a String
+Example #10:
+Example #11:
+'''
 print()
-output_plain_sep_mark()
-print(exercise_defined)
 
+# print the example block
+output_plain_sep_mark()
+print(example_defined)
 output_plain_sep_mark()
 
 # 
@@ -156,11 +166,11 @@ output_plain_sep_mark()
 # print(raw_string)
 # 
 
-exercises(1)
+# Example 1
 # 
 # Simple search for literal characters matching 'abc'
 # 
-print("Find match for 'abc' using finditer() method\n")
+print("Example 1\nFind match for 'abc' using finditer() method\n")
 
 # Using 'compile()' method allows assigning patterns to a variable
 pattern = re.compile(r'abc')    # Search for literal characters & store in var
@@ -178,3 +188,279 @@ print("Locate match characters from findter() 'span=(1,4)'\nusing the index nums
 print(f'\t{text_to_search[1:4]}')
 
 output_plain_sep_mark()
+
+
+
+# --------------------------------------------------------------- #
+
+# Example 2
+# 
+# Using the dot "." character
+# 
+
+print("Example 2\nDot character, all except newline, escaped = period\n")
+
+# Using . character unescaped
+pattern = re.compile(r'.')    # Search for all alphanumeric except newline
+
+matches = pattern.finditer(text_to_search) # assign search result to a var
+
+print("Unescaped:")
+count = 1
+for match in matches:
+    if count <= 10:
+        print(f'\t{match}')
+        count += 1
+
+print('\nUnescaped character finds stopped after 10 interations.')
+
+print('\n')
+
+# print("Escaped:")
+
+pattern = re.compile(r'\.')    # Search for all alphanumeric except newline
+
+matches = pattern.finditer(text_to_search) # assign search result to a var
+
+print("Escaped:")
+for match in matches:
+    print(f'\t{match}')
+
+
+output_plain_sep_mark()
+
+
+
+# --------------------------------------------------------------- #
+
+# Example 3
+# 
+# Using "d" character to search for all digits (numeric characters)
+# 
+
+print("Example 3\n'd' character, all digits")
+
+print()
+# Using . character unescaped
+pattern = re.compile(r'\d')    # Search for all alphanumeric except newline
+
+matches = pattern.finditer(text_to_search) # assign search result to a var
+
+print("Numeric characters - d = digits:")
+count = 1
+for match in matches:
+    if count <= 10:
+        print(f'\t{match}')
+        count += 1
+
+print('\nNumeric character (digit) finds stopped after 10 interations.')
+
+
+output_plain_sep_mark()
+
+
+
+# --------------------------------------------------------------- #
+
+# Example 4
+# 
+# Using "D" character to search for all non-digit (non-numeric characters)
+# 
+
+print("Example 4\n'D' character, all non-digits")
+
+print()
+
+pattern = re.compile(r'\D')    # Search for all alphanumeric except newline
+
+matches = pattern.finditer(text_to_search) # assign search result to a var
+
+print("Numeric characters - D = non-digits:")
+count = 1
+for match in matches:
+    if count <= 10:
+        print(f'\t{match}')
+        count += 1
+
+print('\nNon-numeric character "D" finds stopped after 10 interations.')
+
+
+output_plain_sep_mark()
+
+
+
+# --------------------------------------------------------------- #
+
+# Example 5
+# 
+# Using "w" character to search for all word characters a-z, A-Z, 0-9 & _
+# 
+
+print("Example 5\n'w' character, all word characters - a-z,\n\tA-Z, 0-9, & '_'")
+
+print()
+
+pattern = re.compile(r'\w')    # Search for all alphanumeric except newline
+
+matches = pattern.finditer(text_to_search) # assign search result to a var
+
+print("Word characters - w = a-z,\n\tA-Z, 0-9, & '_':")
+count = 1
+for match in matches:
+    if count <= 10:
+        print(f'\t{match}')
+        count += 1
+
+print('\nNon-numeric character "D" finds stopped after 10 interations.')
+
+
+
+# --------------------------------------------------------------- #
+output_plain_sep_mark()
+
+# Example 6
+# 
+# Using "s" to search for all whitespace - space, tab, newline
+# 
+
+
+print("Example 6\nUsing 's' to search for all whitespace - space, tab, newline")
+
+print()
+
+pattern = re.compile(r'\s')    # Search for all 
+
+matches = pattern.finditer(text_to_search) # assign search result to a var
+
+print("Whitespace locations:")
+count = 1
+for match in matches:
+    if count <= 10:
+        print(f'\t{match}')
+        count += 1
+
+print('\nWhitespace character "s" finds stopped after 10 interations.')
+
+print()
+
+
+
+# --------------------------------------------------------------- #
+output_plain_sep_mark()
+
+# Example 7
+# 
+# Using "\\b" Word Boundary (white space or non alpha-numeric characters)
+# 
+
+print("Example 7\nUsing the 'b' character to search for all words 'Ha' with a \n\tword boundary - whitespaceor  non-alpha-numeric")
+
+print()
+
+pattern = re.compile(r'\bHa')    # Search for all 
+
+matches = pattern.finditer(text_to_search) # assign search result to a var
+
+print("All words 'Ha' that have a word boundary 'b'")
+count = 1
+for match in matches:
+    if count <= 10:
+        print(f'\t{match}')
+        count += 1
+
+# print('\nCharacters Ha with finds stopped after 10 interations.')
+
+print()
+
+
+
+# --------------------------------------------------------------- #
+output_plain_sep_mark()
+
+# Example 8
+# 
+# Using "^" at the beginning (a word or character at the start)
+# 
+
+print("Example 8\nUsing the '^' character to search for words at the beginning of a sentence")
+
+print()
+
+pattern = re.compile(r'^Start')    # Search for all 
+
+matches = pattern.finditer(sentence) # assign search result to a var
+
+print("All words 'Start' that are at the beginning of sentence")
+count = 1
+for match in matches:
+    if count <= 10:
+        print(f'\t{match}')
+        count += 1
+
+# print('\nCharacters Ha with finds stopped after 10 interations.')
+
+print()
+
+
+
+# --------------------------------------------------------------- #
+output_plain_sep_mark()
+
+# Example 9
+# 
+# Using "$" at the end (a word or character at the end)
+# 
+
+print("Example 9\nUsing the '$' character to search for words at the end of a sentence")
+
+print()
+
+pattern = re.compile(r'end.$')    # Search for all 
+
+matches = pattern.finditer(sentence) # assign search result to a var
+
+print("All words 'end' that are at the end of sentence")
+count = 1
+for match in matches:
+    if count <= 10:
+        print(f'\t{match}')
+        count += 1
+
+# print('\nCharacters Ha with finds stopped after 10 interations.')
+
+print()
+
+
+# Stopped: 9:18
+
+# Layout
+
+output_plain_sep_mark()
+
+# --------------------------------------------------------------- #
+# output_plain_sep_mark()
+
+# Example 5
+# 
+# Using "w" character to search for all word characters a-z, A-Z, 0-9 & _
+# 
+
+# print("Example 5\n'w' character, all word characters - a-z,\n\tA-Z, 0-9, & '_'")
+
+# print()
+
+# pattern = re.compile(r'\w')    # Search for all 
+
+# matches = pattern.finditer(text_to_search) # assign search result to a var
+
+# print("Word characters - w = a-z,\n\tA-Z, 0-9, & '_':")
+# count = 1
+# for match in matches:
+#     if count <= 10:
+#         print(f'\t{match}')
+#         count += 1
+
+# print('\nNon-numeric character "D" finds stopped after 10 interations.')
+
+
+print()
