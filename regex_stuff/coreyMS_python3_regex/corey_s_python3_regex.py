@@ -60,8 +60,6 @@ print("\tTable of 'regex' Characters\n")
 
 print(regex_chars)
 
-# output_plain_sep_mark()
-
 
 
 # 
@@ -93,49 +91,10 @@ Mrs. Robinson
 Mr. T
 '''
 
-sentence = 'Start a sentence and bring it to an end.'
+sentence = 'Start a sentence and bring it to an end'
 
 
-
-
-# output_plain_sep_mark()
-# print()
-# print("Unless otherwise specified, examples use the following data")
-
-# print()
-
-sample_data = '''
-text_to_search = 
-abcdefghijklmnopqurtuvwxyz
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
-1234567890
-
-Ha HaHa
-
-MetaCharacters (Need to be escaped):
-. ^ $ * + ? { } [ ] \ | ( )
-
-coreyms.com
-
-321-555-4321
-123.555.1234
-123*555*1234
-800-555-1234
-900-555-1234
-
-Mr. Schafer
-Mr Smith
-Ms Davis
-Mrs. Robinson
-Mr. T
-
-
-sentence = 'Start a sentence and bring it to an end.'
-'''
-# print(sample_data)
-
-# output_plain_sep_mark()
-
+# Table of examples
 example_defined = '''CHARACTERS FOR ALPHA-NUMERIC AND WHITESPACE AND INVERSES
 Example #1: Simple literal string regex search, compiled, output finditer()
 Example #2: Using the dot "." character - any character except new line - must\n\t\tescape to find a period
@@ -165,6 +124,10 @@ output_plain_sep_mark()
 # raw_string = r"\tTab"       # Python interprets \t as literal characters
 # print(raw_string)
 # 
+
+
+
+# --------------------------------------------------------------- #
 
 # Example 1
 # 
@@ -411,11 +374,11 @@ output_plain_sep_mark()
 # Using "$" at the end (a word or character at the end)
 # 
 
-print("Example 9\nUsing the '$' character to search for words at the end of a sentence")
+print("Example 9\nUsing the '$' character to search for strings at the end of a sentence")
 
 print()
 
-pattern = re.compile(r'end.$')    # Search for all 
+pattern = re.compile(r'end$')    # Search for all 
 
 matches = pattern.finditer(sentence) # assign search result to a var
 
