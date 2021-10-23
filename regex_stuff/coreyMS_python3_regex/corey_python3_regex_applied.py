@@ -125,6 +125,8 @@ example_defined = '''
     Example #11: Email matching with regex pattern from the internet.
 
     Example #12: Using groups to collect urls
+
+    Example #13: Using using back reference and the re module sub method to substitute in the back\n\t\t references - continuing groups
 '''
 
 print()
@@ -354,10 +356,10 @@ output_plain_sep_mark()
 
 # Example #8
 # 
-# Using quatifiers
+# Using quantifiers
 # 
 
-print("Example 8\nUse qutifiers to limit typing (and potential errors) using {n} - exact quantifier\n\t(n = a number in braces)")
+print("Example 8\nUse quantifiers to limit typing (and potential errors) using {n} - exact quantifier\n\t(n = a number in braces)")
 
 print()
 
@@ -493,6 +495,9 @@ output_plain_sep_mark()
 #   domain name
 # 
 
+print("Example 12\nUsing groups to capture urls and output group by index number")
+
+print()
 urls = '''
 https://www.google.com
 http://coreyms.com
@@ -500,73 +505,85 @@ https://youtube.com
 https://www.nasa.gov
 '''
 
-print("Example 11\nUsing groups to capture urls and output group")
+print(f'The URLs being used to match:l {urls}')
 
-pattern_12 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+# print(f"URLs to match: {urls}\n")
 
-print("All urls")
+pattern0 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
 
-matches_12 = pattern_12.finditer(urls)
+matches0 = pattern0.finditer(urls)
 
-for match in matches_12:
-    print(f'\t{match}')
+print("Group zero match.group(0) is always the entire match")
 
-# count = 1
-
-# with open('data.txt', 'r') as f:
-#     contents = f.read()
-
-#     matches_11 = pattern_11.finditer(contents)
-
-#     for match in matches_11:
-#         if count <= 10:
-#             print(f'\t{match}')
-#             count += 1
-
-# print('\nEmails from data.txt with finds stopped after 10 interations.')
-
-print("\n\tSEARCH PATTERN: pattern_12 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')")
-
-print(f"Using group numbers to output parts of a url")
-
-matches_12 = pattern_12.finditer(urls)
+for match0 in matches0:
+    print(f'\tGroup 0 -> match0.group(0): {match0.group(0)}')
 
 print()
 
+# Group 1 match.group(1)
+print("Group one match.group(1) is the first group moving left to right")
 
+pattern1 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+
+matches1 = pattern1.finditer(urls)
+
+for match1 in matches1:
+    print(f'\tGroup 1 -> match1.group(1): {match1.group(1)}')
+
+print()
+
+# Group 2 match.group(2)
+pattern2 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+matches2 = pattern2.finditer(urls)
+
+print("Group two match.group(2) is the second group moving left to right")
+
+for match2 in matches2:
+    print(f'\tGroup 2  -> match2.group(2): {match2.group(2)}')
+
+print()
+
+# Group 3 match.group(3)
+pattern3 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+matches3 = pattern3.finditer(urls)
+
+print("Group three match.group(3) is the third group moving left to right")
+
+for match3 in matches3:
+    print(f'\tGroup 3 -> match3.group(3): {match3.group(3)}')
+
+
+print("\n\tSEARCH PATTERN: pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')")
+
+
+output_plain_sep_mark()
+
+
+
+# --------------------------------------------------------------- #
+
+# Example #13
 # 
-# Accessing the groups individually
+# Using groups to access data - capture domain name and top level
+#   domain name
 # 
-for match in matches_12:
-    print(f'\tgroup(0) is entire url: {match.group(0)}')
 
-print("\n\tGROUP FORMAT: match.group(0)")
+print("Example 13\nUsing using back reference and the re module sub method to substitute in the back references")
 
 print()
+urls = '''
+https://www.google.com
+http://coreyms.com
+https://youtube.com
+https://www.nasa.gov
+'''
+pattern_subbed = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
 
-for match in matches_12:
-    print(f'\tgroup(1) is entire url: {match.group(1)}')
+subbed_urls = pattern_subbed.sub(r'\2\3', urls)
 
-print("\n\tGROUP FORMAT: match.group(1)")
+print(f'The subbed URLs subbing 2 and 3 for group(2) and group(3):{subbed_urls}')
 
-
-print()
-
-
-for match in matches_12:
-    print(f'\tgroup(2) is entire url: {match.group(2)}')
-
-print("\n\tGROUP FORMAT: match.group(2)")
-
-
-print()
-
-
-for match in matches_12:
-    print(f'\tgroup(3) is entire url: {match.group(3)}')
-
-print("\n\tGROUP FORMAT: match.group(3)")
-
+print("\n\tSEARCH PATTERN: subbed_urls = pattern_subbed.sub(r'\\2\\3', urls)")
 
 
 output_plain_sep_mark()
@@ -575,3 +592,49 @@ output_plain_sep_mark()
 # STOPPED AT 33:57
 
 print()
+
+# Corey's code
+# print(f"URLs to match: {urls}\n")
+
+# pattern0 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+
+# matches0 = pattern0.finditer(urls)
+
+# print("Group zero match.group(0) is always the entire match")
+
+# for match0 in matches0:
+#     print(f'\tGroup 0 -> match0.group(0): {match0.group(0)}')
+
+# print()
+
+# Group 1 match.group(1)
+# print("Group one match.group(1) is the first group moving left to right")
+
+# pattern1 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+
+# matches1 = pattern1.finditer(urls)
+
+# for match1 in matches1:
+#     print(f'\tGroup 1 -> match1.group(1): {match1.group(1)}')
+
+# print()
+
+# Group 2 match.group(2)
+# pattern2 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+# matches2 = pattern2.finditer(urls)
+
+# print("Group two match.group(2) is the second group moving left to right")
+
+# for match2 in matches2:
+#     print(f'\tGroup 2  -> match2.group(2): {match2.group(2)}')
+
+# print()
+
+# Group 3 match.group(3)
+# pattern3 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+# matches3 = pattern3.finditer(urls)
+
+# print("Group three match.group(3) is the third group moving left to right")
+
+# for match3 in matches3:
+#     print(f'\tGroup 3 -> match3.group(3): {match3.group(3)}')
