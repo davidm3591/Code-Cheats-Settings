@@ -9,15 +9,14 @@ from common_code_snips import *
 
 # https://www.youtube.com/watch?v=K8L6KVGG-7o"
 
-def exercises(exercise_number):
-    print(f'\nExercise # {exercise_number}')
+# def exercises(exercise_number):
+#     print(f'\nExercise # {exercise_number}')
 
 
 
 
 
 output_plain_sep_title("Corey Schafer Regex: Python Tutorial: re Module\n\tHow to Write and Match Regular Expressions (Regex)\n\tRegex Applied - Practicle Examples")
-
 
 
 
@@ -58,8 +57,6 @@ Methods
 print()
 print("\tTable of 'regex' Characters\n")
 print(regex_chars)
-
-# output_plain_sep_mark()
 
 
 
@@ -104,46 +101,50 @@ sentence = 'Start a sentence and bring it to an end.'
 
 # Table of examples
 example_defined = '''
-Example #1: Using regex characters for phone number pattern - simple, explicit:\n\t    \d\d\d.\d\d\d.\d\d\d\d
+    Example #1: Using regex characters for phone number pattern - simple, explicit:\n\t\t\d\d\d.\d\d\d.\d\d\d\d
 
-Example #2: Parse & snag phone nums from an external text file - simple, explicit:\n\t    \d\d\d.\d\d\d.\d\d\d\d
+    Example #2: Parse & snag phone nums from an external text file - simple, explicit:\n\t\t\d\d\d.\d\d\d.\d\d\d\d
 
-Example #3: Parse & snag phone numss using a character set that sets delimiter\n\t     to "-" or "."
+    Example #3: Parse & snag phone numss using a character set that sets delimiter\n\t\tto "-" or "."
 
-Example #4: 800 and 900 phone numbers with expanding the use of character sets
+    Example #4: 800 and 900 phone numbers with expanding the use of character sets
 
-Example #5: Parse & snag data from an external text file expanding the use of character\n\t    sets to pull 800 & 900 numbers with delimiters "-" or "."
+    Example #5: Parse & snag data from an external text file expanding the use of character\n\t\tsets to pull 800 & 900 numbers with delimiters "-" or "."
 
-Example #6: Using ranges in charcter sets
+    Example #6: Using ranges in charcter sets
 
 
-Example #7: Using ^ as negation in a character set
+    Example #7: Using ^ as negation in a character set
 
-Example #8: Using quantifiers to limit typing (and potential errors)
+    Example #8: Using quantifiers to limit typing (and potential errors)
 
-Example #9: Matching variable string content (Mr. Name, Mr Name Mrs. Name, Ms Name, etc)\n\t    by including quantifiers, and groups
+    Example #9: Matching variable string content (Mr. Name, Mr Name Mrs. Name, Ms Name, etc)\n\t\tby including quantifiers, and groups
 
-Example #10: Matching emails
+    Example #10: Matching emails
 
-Example #11:
+    Example #11: Email matching with regex pattern from the internet.
+
+    Example #12: Using groups to collect urls
 '''
 
 print()
 
 # print the example block
 output_plain_sep_mark()
-print("\tTABLE OF EXAMPLES - REGEX APPLIED")
+print("    TABLE OF EXAMPLES - REGEX APPLIED")
 print(example_defined)
 output_plain_sep_mark()
 
 print('\n')
 
-# Example #3: Parse & snag phone numss using a character\n\t    set that sets delimiter to "-" or "."
 
-# --------------------------------------------------------------- #
 output_plain_sep_mark()
 
-# Example 1
+
+
+# --------------------------------------------------------------- #
+
+# Example #1
 # 
 # Use regex characters to find phone number pattern
 # 
@@ -161,15 +162,6 @@ print("All all phone numbers in 'text_to_search'")
 for match in matches_1:
     print(f'\t{match}')
 
-# print("All words 'Ha' that have a word boundary 'b'")
-# count = 1
-# for match in matches:
-#     if count <= 10:
-#         print(f'\t{match}')
-#         count += 1
-
-# print('\nCharacters Ha with finds stopped after 10 interations.')
-
 print("\n\tSEARCH PATTERN: pattern_1 = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')")
 
 output_plain_sep_mark()
@@ -178,7 +170,7 @@ output_plain_sep_mark()
 
 # --------------------------------------------------------------- #
 
-# Example 2
+# Example #2
 # 
 # Parse & snag phone nums from an external text file
 # 
@@ -214,7 +206,7 @@ output_plain_sep_mark()
 
 # --------------------------------------------------------------- #
 
-# Example 3
+# Example #3
 # 
 # Use regex characters to find phone number pattern and set delimiter
 #   to either '-' or '.'
@@ -233,15 +225,6 @@ print("All all phone numbers in 'text_to_search'")
 for match in matches_3:
     print(f'\t{match}')
 
-# print("All words 'Ha' that have a word boundary 'b'")
-# count = 1
-# for match in matches:
-#     if count <= 10:
-#         print(f'\t{match}')
-#         count += 1
-
-# print('\nCharacters Ha with finds stopped after 10 interations.')
-
 print("\n\tSEARCH PATTERN: pattern_3 = re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d\d')")
 
 output_plain_sep_mark()
@@ -250,7 +233,7 @@ output_plain_sep_mark()
 
 # --------------------------------------------------------------- #
 
-# Example 4
+# Example #4
 # 
 # Use regex characters to find 800 or 900 phone number pattern expanding the use of character sets
 # 
@@ -268,15 +251,6 @@ print("All all 800 and 900 phone numbers in 'text_to_search'")
 for match in matches_4:
     print(f'\t{match}')
 
-# print("All words 'Ha' that have a word boundary 'b'")
-# count = 1
-# for match in matches:
-#     if count <= 10:
-#         print(f'\t{match}')
-#         count += 1
-
-# print('\nCharacters Ha with finds stopped after 10 interations.')
-
 print("\n\tSEARCH PATTERN: pattern_4 = re.compile(r'[89]00[-.]\d\d\d[-.]\d\d\d\d')")
 
 output_plain_sep_mark()
@@ -285,7 +259,7 @@ output_plain_sep_mark()
 
 # --------------------------------------------------------------- #
 
-# Example 5
+# Example #5
 # 
 # Using character sets to parse & snag 800 and 900 phone nums from an 
 #   external text file with delimiter characters '-' and '.'
@@ -321,8 +295,7 @@ output_plain_sep_mark()
 
 # --------------------------------------------------------------- #
 
-
-# Example 6
+# Example #6
 # 
 # Using ranges in charcter sets
 # 
@@ -353,8 +326,7 @@ output_plain_sep_mark()
 
 # --------------------------------------------------------------- #
 
-
-# Example 7
+# Example #7
 # 
 # Using ^ as negation character in a set
 # 
@@ -363,7 +335,7 @@ print("Example 7\nUse regex ^ in character set to find all 3 letter words ending
 
 print()
 
-pattern_7 = re.compile(r'[^b]at')    # finding the first 3 digits
+pattern_7 = re.compile(r'[^b]at')
 
 matches_7 = pattern_7.finditer(text_to_search) # assign search result to a var
 
@@ -371,15 +343,6 @@ print("All 3 letter words ending in 'at' except bat in 'text_to_search'")
 
 for match in matches_7:
     print(f'\t{match}')
-
-# print("All words 'Ha' that have a word boundary 'b'")
-# count = 1
-# for match in matches:
-#     if count <= 10:
-#         print(f'\t{match}')
-#         count += 1
-
-# print('\nCharacters Ha with finds stopped after 10 interations.')
 
 print("\n\tSEARCH PATTERN: pattern_7 = re.compile(r'[^b]at')")
 
@@ -389,8 +352,7 @@ output_plain_sep_mark()
 
 # --------------------------------------------------------------- #
 
-
-# Example 8
+# Example #8
 # 
 # Using quatifiers
 # 
@@ -408,15 +370,6 @@ print("All phone numbers using {n} - exact quantifier (n = a number in braces)'"
 for match in matches_8:
     print(f'\t{match}')
 
-# print("All words 'Ha' that have a word boundary 'b'")
-# count = 1
-# for match in matches:
-#     if count <= 10:
-#         print(f'\t{match}')
-#         count += 1
-
-# print('\nCharacters Ha with finds stopped after 10 interations.')
-
 print("\n\tSEARCH PATTERN: pattern_8 = re.compile(r'\d{3}[-.]\d{3}[-.]\d{4}')")
 
 output_plain_sep_mark()
@@ -425,8 +378,7 @@ output_plain_sep_mark()
 
 # --------------------------------------------------------------- #
 
-
-# Example 9
+# Example #9
 # 
 # Using quatifiers
 # 
@@ -456,15 +408,6 @@ print("All phone numbers using {n} - exact quantifier (n = a number in braces)")
 for match in matches_9:
     print(f'\t{match}')
 
-# print("All words 'Ha' that have a word boundary 'b'")
-# count = 1
-# for match in matches:
-#     if count <= 10:
-#         print(f'\t{match}')
-#         count += 1
-
-# print('\nCharacters Ha with finds stopped after 10 interations.')
-
 print("\n\tSEARCH PATTERN: pattern_9 = re.compile(r'M(r|s|rs)\.?\s[A-Z]\w*')")
 
 
@@ -474,13 +417,12 @@ output_plain_sep_mark()
 
 # --------------------------------------------------------------- #
 
-
-# Example 10
+# Example #10
 # 
 # Finding emails
 # 
 
-# Text to match showing
+# Emails to match showing
 emails_to_match ='''        CoreyMSchafer@gmail.com
         corey.schafer@university.edu
         corey-321-schafer@my-work.net
@@ -491,29 +433,144 @@ print("Example 10\nUsing regex to find emails")
 print(f"\nThe emails to match:\n{emails_to_match}\n")
 
 
-pattern_10 = re.compile(r'M(r|s|rs)\.?\s[A-Z]\w*')    
+pattern_10 = re.compile(r'[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)')
 
-matches_10 = pattern_10.finditer(text_to_search) # assign search result to a var
+matches_10 = pattern_10.finditer(emails_to_match) # assign search result to a var
 
-print("All emails from text_to_search")
+print("All emails from emails_to_match")
 
 for match in matches_10:
     print(f'\t{match}')
 
-# print("All words 'Ha' that have a word boundary 'b'")
-# count = 1
-# for match in matches:
-#     if count <= 10:
-#         print(f'\t{match}')
-#         count += 1
+print("\n\tSEARCH PATTERN: pattern_10 = re.compile(r'[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)')")
 
-# print('\nCharacters Ha with finds stopped after 10 interations.')
-
-print("\n\tSEARCH PATTERN: pattern_9 = re.compile(r'M(r|s|rs)\.?\s[A-Z]\w*')")
+print("\nNOTE FROM COREY: It is best to grab something from the web for emails.")
 
 
 output_plain_sep_mark()
-# print("\n\tSEARCH PATTERN: ")
+
+
+
+# --------------------------------------------------------------- #
+
+# Example #11
+# 
+# Finding emails - regex pattern from internet
+# 
+
+print("Example 11\nUsing regex to find emails in an external text file")
+
+pattern_11 = re.compile(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+')
+
+print("All emails from data.txt")
+
+count = 1
+
+with open('data.txt', 'r') as f:
+    contents = f.read()
+
+    matches_11 = pattern_11.finditer(contents)
+
+    for match in matches_11:
+        if count <= 10:
+            print(f'\t{match}')
+            count += 1
+
+print('\nEmails from data.txt with finds stopped after 10 interations.')
+
+print("\n\tSEARCH PATTERN: pattern_11 = re.compile(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+')")
+
+
+output_plain_sep_mark()
+
+
+
+# --------------------------------------------------------------- #
+
+# Example #12
+# 
+# Using groups to access data - capture domain name and top level
+#   domain name
+# 
+
+urls = '''
+https://www.google.com
+http://coreyms.com
+https://youtube.com
+https://www.nasa.gov
+'''
+
+print("Example 11\nUsing groups to capture urls and output group")
+
+pattern_12 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+
+print("All urls")
+
+matches_12 = pattern_12.finditer(urls)
+
+for match in matches_12:
+    print(f'\t{match}')
+
+# count = 1
+
+# with open('data.txt', 'r') as f:
+#     contents = f.read()
+
+#     matches_11 = pattern_11.finditer(contents)
+
+#     for match in matches_11:
+#         if count <= 10:
+#             print(f'\t{match}')
+#             count += 1
+
+# print('\nEmails from data.txt with finds stopped after 10 interations.')
+
+print("\n\tSEARCH PATTERN: pattern_12 = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')")
+
+print(f"Using group numbers to output parts of a url")
+
+matches_12 = pattern_12.finditer(urls)
+
+print()
+
+
+# 
+# Accessing the groups individually
+# 
+for match in matches_12:
+    print(f'\tgroup(0) is entire url: {match.group(0)}')
+
+print("\n\tGROUP FORMAT: match.group(0)")
+
+print()
+
+for match in matches_12:
+    print(f'\tgroup(1) is entire url: {match.group(1)}')
+
+print("\n\tGROUP FORMAT: match.group(1)")
+
+
+print()
+
+
+for match in matches_12:
+    print(f'\tgroup(2) is entire url: {match.group(2)}')
+
+print("\n\tGROUP FORMAT: match.group(2)")
+
+
+print()
+
+
+for match in matches_12:
+    print(f'\tgroup(3) is entire url: {match.group(3)}')
+
+print("\n\tGROUP FORMAT: match.group(3)")
+
+
+
+output_plain_sep_mark()
+
 
 # STOPPED AT 33:57
 
