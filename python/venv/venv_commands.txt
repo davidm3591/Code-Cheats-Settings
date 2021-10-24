@@ -5,6 +5,9 @@ python -m venv extract_env_1
 
 ACTIVATE
 name_of_environment\Scripts\activate.bat
+NOTE: (PS)did not use the .bat syntax, just the ..\extract_env_1\Scripts\activate (see below)
+PS C:\edge_tool_data\Environments> .\extract_env_1\Scripts\activate
+(extract_env_1) PS C:\edge_tool_data\Environments>
 
 VERIFY
 1. virtual environment will show in parentheses
