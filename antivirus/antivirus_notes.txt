@@ -1,6 +1,6 @@
 Kaspersky to Bitdefender Swap
 
-1. Purchase Bitdefender
+1. Purchase & download Bitdefender
 	-- Bitdefender Site: https://www.bitdefender.com/media/html/consumer/new/2020/cl-offer1-opt/last-offer.html?pid=60off
 2. Remove Kapersky prior to installing Bitdefender
 	-- reading/tools: https://www.bitdefender.com/consumer/support/answer/2625/
